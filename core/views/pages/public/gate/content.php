@@ -31,13 +31,8 @@ if($view == "open"):
 
             if($execute[0] == "true")
             {
-
-                $_SESSION['guestID'] = $value;
-                header("location:/$value");
+                echo "true";
             }
-
-            
-
         }
         
     }

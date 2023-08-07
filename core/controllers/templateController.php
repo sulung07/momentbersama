@@ -187,8 +187,9 @@
     <!-- End Nav Bar -->
     <div id="myModal" class="modal">
         <div class="modal-content">
-			<h3 style="font-size: 30px;">Hello $Guest_Name</h3>
+			<h3 style="font-size: 30px;">Hello <?= $guest['guest_name'] ?></h3>
             <p style="margin-top: 10px !important;">Thank you for engaging with our invitation.</p>
+            <input type="hidden" id="guestusername" value="<?= $guest['guest_username'] ?>" >
             <button class="btn" id="openinvitation" style="margin-top: 20px !important;">Open Invitation</button>
         </div>
     </div>

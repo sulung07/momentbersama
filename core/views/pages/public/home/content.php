@@ -741,7 +741,7 @@ $design->footer($pages , array(""));
         showModal();
     });
 
-    function showModal() {
+    function showModal(username) {
         var modal = document.getElementById('myModal');
         // var closeButton = modal.querySelector('.close');
         var openinvitation = modal.querySelector('#openinvitation');
@@ -749,7 +749,26 @@ $design->footer($pages , array(""));
         modal.style.display = 'flex';
 
         openinvitation.addEventListener('click', function() {
-            modal.style.display = 'none';
+
+            var guestUsername = $("#guestusername").val();
+
+            $.ajax({
+
+                type : "post",
+                url  : "/gate/open/"+guestUsername,
+                success:function(response)
+                {
+
+                    if(response == "true")
+                    {
+                        modal.style.display = 'none';
+
+                    }
+
+                }
+
+            })
+
         });
     }
 
