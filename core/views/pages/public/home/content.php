@@ -68,7 +68,7 @@ $design->head($pages , array("$pages"));
                                             </div>
                                         </div>
 
-                                        <p>WE INVITE YOU JOHANNES & MAWAR TO OUR WEDDING CELEBRATION.</p>
+                                        <p>WE INVITE YOU <?= $guest['guest_name'] ?> TO OUR WEDDING CELEBRATION.</p>
 
                                     </div>
                                 </div>
@@ -759,11 +759,9 @@ $design->footer($pages , array(""));
                 success:function(response)
                 {
 
-                    if(response == "true")
-                    {
+                    
                         modal.style.display = 'none';
 
-                    }
 
                 }
 
