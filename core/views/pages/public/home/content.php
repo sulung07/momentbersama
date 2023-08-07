@@ -1,7 +1,7 @@
 <?php
 $design = new templateController();
 
-$eventID    = "720620230726095130";
+$eventID    = "277720230807155913";
 $pagesCover = true;
 $pagesBody  = false;
 $guestID    = "";
@@ -43,536 +43,719 @@ $design->head($pages , array("$pages"));
 ?>
 
 
-<?php if($pagesCover): ?>
 
-    <section class="static-hero-s3">
-        <div class="hero-container" >
-            <div class="hero-inner"  >
-                <div class="container" >
-                    <div class="row justify-content-center">
-                        <div class="col-lg-6">
-                            <div class="wpo-event-item" >
-                                <div class="wpo-event-text">
-                                    <h5>UNDANGAN PERNIKAHAN </h5>
-                                    <p class="fw-bold">JOHANNES HERMAN <br> & <br> KOMANG WARMANI</p>
-                                    <ul>
-                                        <li>Kepada Yang Terhormat : <br> <br>  </li>
-                                        <li><span class="fw-bold"><?= $guest_name ?></span> </li>
-                                        <li> <a class="popup-gmaps" href="/gate/open/<?= $gest_username ?>">BUKA UNDANGAN</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<?php endif; ?>
-
-
-<?php if($pagesBody): ?>
-
-<style type="text/css">
-
-.wpo-cta-section,
-.wpo-cta-section-s2,
-.wpo-cta-section-s3 {
-  padding: 145px 0;
-  background: url("/assets/media/<?= $template['background_sec_3'] ?>") no-repeat center center;
-  position: relative;
-  z-index: 1;
-}
-
-
-
-</style>
-
-
-<audio id="song" loop>
-    <source src="https://ourwedding.08-09-2023.com/assets/media/<?= $template['music_file'] ?>" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
-
-
-<button id="toggle-button" onclick="toggleAudio()"><i class="fa fa-play"></i></button>
-
- <!-- Modal Selamat Datang -->
- <div class="modal-container" id="modal-welcome">
-    <div class="modal-content">
-      <h2><br> SELAMAT DATANG DI PERNIKAHAN <br > <br> <span style="color:#B19A56;"> JOHANNES HERMAN <br> & <br>  KOMANG WARMANI </span></h2>
-      <br><br><br>
-      <button class="modal-button" onclick="startAudio()">Mulai</button>
-    </div>
-  </div>
-
-
-    <section class="wpo-hero-slider wpo-hero-style-3">
-            <div class="wedding-announcement">
-                <div class="couple-text">
-                    <h2 class="wow slideInUp" data-wow-duration="1s"><?= $template['header_section_title'] ?></h2>
-                    <p class="wow slideInUp" data-wow-duration="1.8s"><?= $template['header_section_title_small'] ?></p>
-                 
-                </div>
-            </div>
-
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <?php if(!empty($slideshow)){ foreach ($slideshow as $key => $list) { ?>
-                       
-                    <div class="swiper-slide">
-                        <div class="slide-inner slide-bg-image" data-background="/assets/media/<?= $list['images'] ?>">
-                        </div> <!-- end slide-inner --> 
-                    </div>
-                    
-                    <?php }} ?><!-- end swiper-slide -->
-
-                 <!-- end swiper-slide -->
-                </div>
-                <!-- end swiper-wrapper -->
-
-                <!-- swipper controls -->
-                <div class="swiper-pagination"></div>
-                <div class="next-prev-btn">
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="wpo-wedding-date section-padding">
-            <h2 class="hidden">some</h2>
-            <div class="container">
-                <div class="row">
-                    <div class="col col-xs-12 ">
-                        <div class="clock-grids">
-                            <div id="clock"></div>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- end container -->
-        </section>
-
-        
-
-        <!-- end of hero slider -->
-        <!-- start couple-section -->
-        <section class="couple-section pt-160 section-padding" id="couple">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col col-xs-12">
-                        <div class="couple-area clearfix">
-                            <div class="text-grid bride">
-                                <div class="couple-img">
-                                    <img src="/assets/media/<?= $info['groom_pic'] ?>" alt="" loading="lazy">
-                                </div>
-                                <h3><?= $info['groom_name'] ?></h3>
-                                <p><?= $info['groom_desc'] ?></p>
-                               
-                            </div>
-                            <div class="middle-couple-pic">
-                                <img src="/assets/media/<?= $template['background_sec_1'] ?>" alt="" loading="lazy">
-                                <div class="frame-img"><img src="assets/images/couple/shape.png" alt=""></div>
-                            </div>
-                            <div class="text-grid groom">
-                                <div class="couple-img">
-                                    <img src="/assets/media/<?= $info['bride_pic'] ?>" alt="" loading="lazy">
-                                </div>
-                                <h3><?= $info['bride_name'] ?></h3>
-                                <p><?= $info['bride_desc'] ?></p>
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- end container -->
-        </section>
-        <!-- end couple-section -->
-        <!-- start wpo-video-section -->
-        <section class="wpo-video-section-s2">
-            <h2 class="hidden">some</h2>
-            <div class="wpo-video-item">
-                <div class="wpo-video-img">
-                    <img src="/assets/media/<?= $template['background_sec_2'] ?>" alt="" loading="lazy">
-                    <a href="<?= $template['video_link'] ?>" class="video-btn" data-type="iframe"><i
-                            class="fi flaticon-play"></i></a>
-                </div>
-            </div>
-        </section>
-        <!-- end wpo-video-section-->
-
-        <!-- start story-section -->
-        <section class="story-section section-padding" id="story">
-            <div class="container">
-                <div class="row">
-                    <div class="wpo-section-title-s2">
-                        <div class="section-title-simg">
-                            <img src="assets/images/section-title2.png" alt="" >
-                        </div>
-                        <h2>Perjalanan Singkat Hubungan Kami</h2>
-                        <div class="section-title-img">
-                            <div class="round-ball"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col col-xs-12">
-                        <div class="story-timeline">
-                            <div class="round-shape"></div>
-
-
-                            <?php $no = 0; if(!empty($story)){ foreach ($story as $key => $list) { $no++;    
-                                if ($no % 2 === 0) {
-                                ?>
-
-                                
-                                <div class="row">
-                                    <div class="col col-lg-6 col-12">
-                                        <div class="img-holder right-align-text left-site">
-                                            <img src="/assets/media/<?= $list['story_images'] ?>" alt class="img img-responsive" loading="lazy">
-                                            <div class="story-shape-img">
-                                                <img src="assets/images/story/shape.png" alt="">
+    
+<main class="main-root">
+        <div id="dsn-scrollbar">
+            <div class="dsn-slider demo3" data-dsn-header="project">
+                <div class="dsn-root-slider" id="dsn-hero-parallax-img">
+                    <div class="slide-inner">
+                        <div class="swiper-wrapper">
+                            <div class="slide-item swiper-slide">
+                                <div class="slide-content">
+                                    <div class="slide-content-inner">
+                                        <div class="project-metas">
+                                            <div class="project-meta-box project-work cat">
+                                                <span>THE WEDDING OF</span>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col col-lg-6 col-12 text-holder">
-                                        <span class="heart">
-                                            <i class="fi flaticon-heart"></i>
-                                        </span>
-                                        <div class="story-text">
-                                            <h3><?= $list['story_title'] ?></h3>
-                                            <span class="date"><?= $list['story_date'] ?></span>
-                                            <p><small><?= $list['story_desc'] ?></small></p>
+
+                                        <div class="title-text-header">
+                                            <div class="title-text-header-inner">
+                                                <a href="#" class="effect-ajax" data-dsn-ajax="slider">
+                                                    MAHENDRA + FRISKA
+                                                </a>
+                                            </div>
                                         </div>
+
+                                        <p>WE INVITE YOU JOHANNES & MAWAR TO OUR WEDDING CELEBRATION.</p>
+
                                     </div>
                                 </div>
-
-
-                                <?php                                        
-                                        
-                                } else {
-
-                                ?>
-
-                                <div class="row">
-                                <div class="col col-lg-6 col-12">
-                                    <div class="story-text right-align-text">
-                                        <h3><?= $list['story_title'] ?></h3>
-                                        <span class="date"><?= $list['story_date'] ?></span>
-                                        <p><small><?= $list['story_desc'] ?></small></p>
+                                <div class="image-container">
+                                    <div class="image-bg cover-bg" data-image-src="assets/img/pic/slider001.jpg"
+                                        data-overlay="5">
+                                        <img src="assets/img/pic/slider001.jpg" alt="">
                                     </div>
                                 </div>
-                                <div class="col col-lg-6 col-12">
-                                    <div class="img-holder">
-                                        <img src="/assets/media/<?= $list['story_images'] ?>" alt class="img img-responsive" loading="lazy">
-                                        <div class="story-shape-img">
-                                            <img src="assets/images/story/shape.png" alt="">
+                            </div>
+
+                            <div class="slide-item swiper-slide">
+                                <div class="slide-content">
+                                    <div class="slide-content-inner">
+                                        <div class="project-metas">
+                                            <div class="project-meta-box project-work cat">
+                                                <span>WEDDING VENUE</span>
+                                            </div>
                                         </div>
+
+                                        <div class="title-text-header">
+                                            <div class="title-text-header-inner">
+                                                <a href="#" class="effect-ajax" data-dsn-ajax="slider">
+                                                   Alindra Villas
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <p>Jl. Puri Mumbul Permai. Jimbaran - Bali.</p>
+
                                     </div>
                                 </div>
+                                <div class="image-container">
+                                    <div class="image-bg cover-bg" data-image-src="assets/img/pic/slider002.jpg"
+                                        data-overlay="5">
+                                        <img src="assets/img/pic/slider002.jpg" alt="">
+                                    </div>
                                 </div>
+                            </div>
 
-                                <?php
-                                    
-                                }
 
-                                ?>
-                                    
+                            <div class="slide-item swiper-slide">
+                                <div class="slide-content">
+                                    <div class="slide-content-inner">
+                                        <div class="project-metas">
+                                            <div class="project-meta-box project-work cat">
+                                                <span>SAVE THE DATE</span>
+                                            </div>
+                                        </div>
 
-                            <?php } } ?>
+                                        <div class="title-text-header">
+                                            <div class="title-text-header-inner">
+                                                <a href="#" class="effect-ajax" data-dsn-ajax="slider">
+                                                    First December
+                                                </a>
+                                            </div>
+                                        </div>
 
-                           
-                         
-                            <div class="row">
-                                <div class="col offset-lg-6 col-lg-6 col-12 text-holder">
-                                    <span class="heart">
-                                        <i class="fi flaticon-wedding-rings"></i>
-                                    </span>
+                                        <p>Friday, 01 December 2023, 4:00 PM</p>
+
+                                    </div>
+                                </div>
+                                <div class="image-container">
+                                    <div class="image-bg cover-bg" data-image-src="assets/img/pic/slider003.jpg"
+                                        data-overlay="5">
+                                        <img src="assets/img/pic/slider003.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dsn-slider-content"></div>
+
+
+                <div class="nav-slider">
+                    <div class="swiper-wrapper" role="navigation">
+						
+                        <div class="swiper-slide">
+                            <div class="image-container">
+                                <div class="image-bg cover-bg" data-image-src="assets/img/pic/slider001.jpg"
+                                    data-overlay="2">
+                                </div>
+                            </div>
+                            <div class="content">
+                            </div>
+                        </div>
+						
+                        <div class="swiper-slide">
+                            <div class="image-container">
+                                <div class="image-bg cover-bg" data-image-src="assets/img/pic/slider002.jpg"
+                                    data-overlay="2">
+                                </div>
+                            </div>
+                            <div class="content">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="image-container">
+                                <div class="image-bg cover-bg" data-image-src="assets/img/pic/slider003.jpg"
+                                    data-overlay="2">
+                                </div>
+                            </div>
+                            <div class="content">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <section class="footer-slid" id="descover-holder">
+                    <div class="control-num">
+                    </div>
+                    <div class="control-nav">
+                        <div class="prev-container" data-dsn="parallax">
+                            <svg viewBox="0 0 40 40">
+                                <path class="path circle" d="M20,2A18,18,0,1,1,2,20,18,18,0,0,1,20,2"></path>
+                                <polyline class="path" points="14.6 17.45 20 22.85 25.4 17.45"></polyline>
+                            </svg>
+                        </div>
+
+                        <div class="next-container" data-dsn="parallax">
+                            <svg viewBox="0 0 40 40">
+                                <path class="path circle" d="M20,2A18,18,0,1,1,2,20,18,18,0,0,1,20,2"></path>
+                                <polyline class="path" points="14.6 17.45 20 22.85 25.4 17.45"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <div class="wrapper">
+
+                <section class="intro-about section-margin">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="intro-content-text">
+
+                                    <h2 data-dsn-grid="move-section" data-dsn-move="-30" data-dsn-duration="100%"
+                                        data-dsn-opacity="1.2" data-dsn-responsive="tablet">
+                                        We gather here today in the presence of God
+                                    </h2>
+
+                                    <p data-dsn-animate="text">Love is patient, love is kind. It does not envy, it does not boast, it is not proud. It does not dishonor others, it is not self-seeking, it is not easily angered, it keeps no record of wrongs. Love does not delight in evil but rejoices with the truth. It always protects, always trusts, always hopes, always perseveres. Love never fails.</p>
+
+                                    <h6 data-dsn-animate="text"> 1 Corinthians </h6>
+                                    <small data-dsn-animate="text">13:4-8a (NIV)</small>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div> <!-- end row -->
-            </div> <!-- end container -->
-        </section>
-        <!-- end story-section -->
-
-        <!-- start wpo-portfolio-section -->
-        <section class="wpo-portfolio-section-s3 section-padding" >
-            <div class="container">
-                <div class="row">
-                    <div class="wpo-section-title-s2">
-                        <div class="section-title-simg">
-                            <img src="assets/images/section-title2.png" alt="">
+                    <div class="background-mask">
+                        <div class="background-mask-bg"></div>
+                        <div class="img-box">
+                            <div class="img-cent" data-dsn-grid="move-up">
+                                <div class="img-container">
+                                    <img data-dsn-y="30%" src="assets/img/pic/pic001.jpg" alt="">
+                                </div>
+                            </div>
                         </div>
-                        <h2>Moment Bahagia</h2>
-                        <div class="section-title-img">
-                            <div class="round-ball"></div>
+                    </div>
+                </section>
+
+                <section class="our-services-2 section-margin">
+                    <div class="container">
+                        <div class="one-title" data-dsn-animate="up">
+                            <div class="title-sub-container">
+                                <p class="title-sub">Our Profiles</p>
+                            </div>
+                            <h2 class="title-main">Two soul who promise to live forever</h2>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="services-item">
+                                    <div class="corner corner-top"></div>
+                                    <div class="corner corner-bottom"></div>
+                                    <div class="icon">
+                                        <img src="assets/img/pic/profile01.jpg" alt="">
+                                    </div>
+                                    <div class="services-header">
+                                        <h3>I Gst Agung Adek Mahendra P</h3>
+                                    </div>
+                                    <p>The second child of the couple </br>
+I Gst Ketut Semarajaya & Jero Putu Sri Artini</p>
+                                </div>
+                            </div>
+					
+                            <div class="col-md-4">
+                                <div class="services-item">
+                                    <div class="corner corner-top"></div>
+                                    <div class="corner corner-bottom"></div>
+                                    <div class="icon">
+                                        <img src="assets/img/pic/profile02.jpg" alt="">
+                                    </div>
+                                    <div class="services-header">
+                                        <h3>Friska Andriani Putri</h3>
+                                    </div>
+                                    <p>The third daughter of the couple </br>
+								Fajar Prayitno & Febe Samiyati</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+	
+                <section class="our-news section-margin" data-dsn="color">
+                    <div class="container">
+                        <div class="one-title" data-dsn-animate="up">
+                            <div class="title-sub-container">
+                                <p class="title-sub">Our Timeline</p>
+                            </div>
+                            <h2 class="title-main">The Day Were We Meet</h2>
+                        </div>
+                        <div class="custom-container">
+                            <div class="slick-slider">
+								
+                                <div class="item-new slick-slide">
+                                    <div class="image" data-overlay="3">
+                                        <img src="assets/img/pic/ch1.jpg" alt="">
+                                    </div>
+                                    <div class="content">
+                                        <div class="background"></div>
+                                        <h5>Chapter 01</h5>
+
+                                        <div class="cta" style="margin-bottom: 30px;">
+                                            <a href="#">The Beginning</a>
+                                        </div>
+
+										<p>
+										In January 2015, First time we met each other at the workplace Ricky n Co Photography. During that time, Mahendra held the role of a video editor, while Friska embarked on an internship program as a video editor in the same location. This journey spanned a distance of 740.8 km from the island of Java to Bali. this is where our story begins.
+										</p>
+
+                                    </div>
+                                </div>
+
+                                <div class="item-new slick-slide">
+                                    <div class="image" data-overlay="3">
+                                        <img src="assets/img/pic/ch2.jpg" alt="">
+                                    </div>
+                                    <div class="content">
+                                        <div class="background"></div>
+                                        <h5>Chapter 02</h5>
+
+                                        <div class="cta" style="margin-bottom: 30px;">
+                                            <a href="#">After</a>
+                                        </div>
+
+										<p>
+										After holding a short meeting for 3 months, our hearts crossed each other but have not been able to start a relationship because of the many differences between us, until 1 year later, October 2016 to be precise we met again.
+										</p>
+
+                                    </div>
+                                </div>
+                                <div class="item-new slick-slide">
+                                    <div class="image" data-overlay="3">
+                                        <img src="assets/img/pic/ch3.jpg" alt="">
+                                    </div>
+                                    <div class="content">
+                                        <div class="background"></div>
+                                        <h5>Chapter 03</h5>
+
+                                        <div class="cta" style="margin-bottom: 30px;">
+                                            <a href="#">First Date</a>
+                                        </div>
+
+										<p>
+										5 months we often met and spent time together, on 18 February 2017 we finally committed to taking care of each other, to get to know each other more and to share joys and sorrows with the differences we had at that time.
+										</p>
+
+                                    </div>
+                                </div>
+                                <div class="item-new slick-slide">
+                                    <div class="image" data-overlay="3">
+                                        <img src="assets/img/pic/ch4.jpg" alt="">
+                                    </div>
+                                    <div class="content">
+                                        <div class="background"></div>
+                                        <h5>Chapter 04</h5>
+
+                                        <div class="cta" style="margin-bottom: 30px;">
+                                            <a href="#">For Good & Bad</a>
+
+                                        </div>
+
+										<p>
+										In 2018 we started a new step in our relationship, we founded Shierra Studios, and during those ups and downs in our relationship we went through it together with building our dreams, until now we are working, growing and processing together.
+										</p>
+
+                                    </div>
+                                </div>
+                                <div class="item-new slick-slide">
+                                    <div class="image" data-overlay="3">
+                                        <img src="assets/img/pic/ch5.jpg" alt="">
+                                    </div>
+                                    <div class="content">
+                                        <div class="background"></div>
+                                        <h5>Chapter 05</h5>
+
+                                        <div class="cta" style="margin-bottom: 30px;">
+                                            <a href="#">The Day Has Come True</a>
+                                        </div>
+
+										<p>
+										Long story short 2022 we got engaged and a year later we decided to get married, because of all the differences and challenges in our relationship one by one we found common ground, First December 2023 will be a new beginning for our relationship, So they are no longer two, but one flesh. Therefore, what God has joined together, no human being must separate.
+										</p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="box-seat box-seat-full section-margin">
+                    <div class="container-fluid">
+                        <div class="inner-img" data-dsn-grid="move-up">
+                            <img src="assets/img/pic/Alindra.jpg" alt="">
+                        </div>
+                        <div class="pro-text">
+                            <h3>Our Special Day <br>at Alindra Villas</h3>
+                            <p><i class="fas fa-church"></i> : Ceremony & Reception</p>
+                            <p><i class="fas fa-map-marker-alt"></i> : By Pass Ngurah Rai, Jimbaran, South Kuta, Badung Regency, Bali 80363</p>
+                            <p><i class="fas fa-calendar-alt"></i> : Friday, 01 December 2023</p>
+                            <p><i class="fas fa-clock"></i> : 03:00 PM - END</p>
+                            <div class="link-custom">
+                                <a class="image-zoom effect-ajax" href="https://goo.gl/maps/wHrabKHQntjsUkm57" target="_blank" data-dsn="parallax">
+                                    <span>See Location Maps</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="sortable-gallery">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="portfolio-grids gallery-container clearfix">
 
-                               
-                                <?php if(!empty($galery)){ foreach ($galery as $key => $list) { ?>
-                                
-                              
-                                <div class="grid">
-                                    <div class="img-holder">
-                                        <a href="/assets/media/<?= $list['images'] ?>" class="fancybox" data-fancybox-group="gall-1">
-                                            <img src="/assets/media/<?= $list['images'] ?>" alt class="img" loading="lazy">
-                                            <div class="hover-content">
-                                                <i class="ti-plus"></i>
-                                            </div>
+                <section class="our-work work-under-header  section-margin" data-dsn-col="3">
+                    <div class="container">
+                        <div class="one-title">
+                            <div class="title-sub-container">
+                                <p class="title-sub">Our Gallery</p>
+                            </div>
+                            <h2 class="title-main">Hope You Remember Us</h2>
+                        </div>
+                    </div>
+                    <div class="gallery-portfolio section-margin">
+						
+                        <a class="link-pop" href="assets/img/pic/Gal001.jpg"
+                            data-source="assets/img/pic/Gal001.jpg" >
+                            <img src="assets/img/pic/Gal001.jpg" alt="">
+                        </a>
+						
+						
+                        <a class="link-pop" href="assets/img/pic/Gal002.jpg"
+                            data-source="assets/img/pic/Gal002.jpg" >
+                            <img src="assets/img/pic/Gal002.jpg" alt="">
+                        </a>
+						
+						
+                        <a class="link-pop" href="assets/img/pic/Gal003.jpg"
+                            data-source="assets/img/pic/Gal003.jpg" >
+                            <img src="assets/img/pic/Gal003.jpg" alt="">
+                        </a>
+						
+						
+                        <a class="link-pop" href="assets/img/pic/Gal004.jpg"
+                            data-source="assets/img/pic/Gal004.jpg" >
+                            <img src="assets/img/pic/Gal004.jpg" alt="">
+                        </a>
+						
+						
+                        <a class="link-pop" href="assets/img/pic/Gal005.jpg"
+                            data-source="assets/img/pic/Gal005.jpg" >
+                            <img src="assets/img/pic/Gal005.jpg" alt="">
+                        </a>
+						
+						
+                        <a class="link-pop" href="assets/img/pic/Gal006.jpg"
+                            data-source="assets/img/pic/Gal006.jpg" >
+                            <img src="assets/img/pic/Gal006.jpg" alt="">
+                        </a>
+						
+						
+                        <a class="link-pop" href="assets/img/pic/Gal007.jpg"
+                            data-source="assets/img/pic/Gal007.jpg" >
+                            <img src="assets/img/pic/Gal007.jpg" alt="">
+                        </a>
+						
+						
+                        <a class="link-pop" href="assets/img/pic/Gal008.jpg"
+                            data-source="assets/img/pic/Gal008.jpg" >
+                            <img src="assets/img/pic/Gal008.jpg" alt="">
+                        </a>
+						
+						
+                        <a class="link-pop" href="assets/img/pic/Gal009.jpg"
+                            data-source="assets/img/pic/Gal009.jpg" >
+                            <img src="assets/img/pic/Gal009.jpg" alt="">
+                        </a>
+						
+						
+                        <a class="link-pop" href="assets/img/pic/Gal010.jpg"
+                            data-source="assets/img/pic/Gal010.jpg" >
+                            <img src="assets/img/pic/Gal010.jpg" alt="">
+                        </a>
+						
+                    </div>
+                </section>
+
+                <section class="our-news section-margin">
+                    <div class="container">
+                        <div class="one-title" data-dsn-animate="up">
+                            <div class="title-sub-container">
+                                <p class="title-sub">Share Your Thoughts</p>
+                            </div>
+                            <h2 class="title-main">Wishes and Blessings</h2>
+                        </div>
+                        <div class="custom-container">
+                            <div class="slick-slider">
+								
+                                <div class="item-new slick-slide">
+                                    <div class="image" data-overlay="3">
+                                        <img src="assets/img/pic/RSVP.jpg" alt="">
+                                    </div>
+                                    <div class="content">
+                                        <div class="background"></div>
+                                        <h5>RSVP</h5>
+
+                                        <div class="cta" style="margin-bottom: 30px;">
+                                            <a href="#">Confirming</a>
+                                        </div>
+
+										<form id="rsvp" class="form" method="post" action="#" data-toggle="validator">
+												<div class="messages"></div>
+												<div class="input__wrap controls">
+												  <div class="form-group">
+
+													<div class="entry">
+													  <label>Name :</label>
+													  <input id="form_name" type="text" name="name" placeholder="$GUEST_AND_WIFE">
+													</div>
+												  </div>
+
+												  <div class="form-group">
+													<div class="entry">
+													  <label>Email :</label>
+													  <input id="form_email" type="email" name="email" placeholder="Your Email">
+													</div>
+												  </div>
+
+															<div class="form-group">
+															  <div class="entry">
+																<label>Available To Join ?</label>
+															  </div>
+															</div>
+															<div class="radio-container">
+															  <div class="radio-circle">
+																<input type="radio" name="status" value="reserved" id="yes-radio">
+																<label for="yes-radio">Yes</label>
+															  </div>
+															  <div class="radio-circle">
+																<input type="radio" name="status" value="decline" id="no-radio">
+																<label for="no-radio">No</label>
+															  </div>
+															</div>
+													
+													</div>
+
+												  <div class="image-zoom" style="margin: 30px 0px ;">
+													<button>SUBMIT</button>
+												  </div>
+											  </form>
+
+                                    </div>
+                                </div>
+
+                                <div class="item-new slick-slide">
+                                    <div class="image" data-overlay="3">
+                                        <img src="assets/img/pic/WISH.jpg" alt="">
+                                    </div>
+                                    <div class="content">
+                                        <div class="background"></div>
+                                        <h5>WISHES</h5>
+
+                                        <div class="cta" style="margin-bottom: 30px;">
+                                            <a href="#">Your Blessings</a>
+                                        </div>
+
+										<form id="bless" class="form" method="post" action="#" data-toggle="validator">
+												<div class="messages"></div>
+												<div class="input__wrap controls">
+												  <div class="form-group">
+
+													<div class="entry">
+													  <label>Name :</label>
+													  <input id="form_name" type="text" name="name" placeholder="$GUEST_AND_WIFE">
+													</div>
+												  </div>
+
+												  <div class="form-group">
+													<div class="entry">
+													  <label>Email :</label>
+													  <input id="form_email" type="email" name="email" placeholder="Your Email">
+													</div>
+												  </div>
+
+													<div class="form-group">
+													<div class="entry">
+													  <label>Wish :</label>	
+															<textarea id="form_message" class="form-control" name="message" placeholder="" style="height: 20px !important;"></textarea>
+													
+													</div>
+													</div>
+												  
+													</div>
+
+												  <div class="image-zoom">
+													<button>BLESSING</button>
+												  </div>
+											  </form>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+	
+	
+                <div class=" box-gallery-vertical section-margin section-padding" data-dsn="color">
+                    <div class="mask-bg"></div>
+                    <div class="container">
+                        <div class="row align-items-center h-100">
+                            <div class="col-lg-6 ">
+                                <div class="box-im" data-dsn-grid="move-up">
+                                    <img class="has-top-bottom" src="assets/img/pic/pic002.jpg" alt=""
+                                        data-dsn-move="20%">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+
+
+                                <div class="box-info">
+
+                                    <div class="vertical-title" data-dsn-animate="up">
+                                        <h2>Moments in Time</h2>
+                                    </div>
+
+                                    <h6 data-dsn-animate="up">We don't remember the days, but we remember the moments when we were together.</h6>
+
+                                    <div class="link-custom" data-dsn-animate="up">
+                                        <a class="image-zoom effect-ajax" href="https://www.youtube.com/" data-dsn="parallax">
+                                            <span>WATCH VIDEO</span>
                                         </a>
                                     </div>
                                 </div>
-
-                            
-
-                                <?php } } ?>
-
-                             
-                                
                             </div>
+
                         </div>
                     </div>
                 </div>
 
-            </div> <!-- end container -->
-        </section>
-        <!-- end wpo-portfolio-section -->
-
-        <section class="wpo-event-section section-padding" id="event">
-            <div class="container">
-                <div class="row">
-                    <div class="wpo-section-title-s2">
-                        <div class="section-title-simg">
-                            <img src="assets/images/section-title2.png" alt="">
-                        </div>
-                        <h2>Waktu & Tempat <br></h2>
-                        <div class="section-title-img">
-                            <div class="round-ball"></div>
-                        </div>
-
-                        <br>
-
-                        <small class="text-center mt-4">Tanpa Mengurangi Rasa Hormat & Karena Keterbatasan Waktu & Tempat, Kami Mengundang Bapak / Ibu Untuk Bersama - Sama Datang Pada : </small>
-
-
-                    </div>
-                    
-
-                </div>
-                <div class="wpo-event-wrap">
-                    <div class="row">
-
-                        <?php if(!empty($event_list)){ foreach ($event_list as $key => $list) { ?>
-
-                        <div class="col col-lg-4 col-md-6 col-12">
-                            <div class="wpo-event-item">
-                                <div class="wpo-event-text">
-                                    <h2><?= $list['activity_name'] ?></h2>
-                                    <ul>
-                                        <li><?= $this->dateIndoHari($list['activity_date']) ?> <br> ( <?= $list['activity_time'] ?> - <?= $list['activity_time_end'] ?> )</li>
-                                        <li><?= $list['activity_loc_title'] ?></li>
-                                       
-
-                                        <li> <a class="popup-gmaps" href="<?= $list['activity_loc_maps'] ?>">See Location</a></li>
-                                    </ul>
-                                </div>
-                                <div class="event-shape-1">
-                                    <img src="/assets/images/event-shape-1.png" alt="">
-                                </div>
-                                <div class="event-shape-2">
-                                    <img src="/assets/images/event-shape-2.png" alt="">
-                                </div>
+                <section class="client-see section-margin">
+                    <div class="container">
+                        <div class="inner">
+                            <div class="left">
+                                <h2 class="title" data-dsn-grid="move-section" data-dsn-move="-60"
+                                    data-dsn-duration="100%" data-dsn-opacity="1" data-dsn-responsive="tablet">
+                                    <span class="text">Several Reasons Why We Are Mariage</span>
+                                </h2>
                             </div>
-                        </div>
-                        
-                        <?php } } ?>
 
-                        
-                     
-                    </div>
-                </div>
+                            <div class="items">
+                                <div class="bg"></div>
+                                <div class="slick-slider">
+									
+                                    <div class="item">
+                                        <div class="quote">
+                                            <p>"The Lord God said, 'It is not good for the man to be alone. I will make a helper suitable for him."</p>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="label">
+                                                <div class="cell">- Genesis 2:18 (NIV)</div>
+                                            </div>
+                                        </div>
+                                    </div>
+									
+                                    <div class="item">
+                                        <div class="quote">
+                                            <p>"Therefore a man shall leave his father and his mother and hold fast to his wife, and they shall become one flesh."</p>
+                                        </div>
+                                        <div class="bottom">
 
-            </div> <!-- end container -->
-        </section>
+                                            <div class="label">
+                                                <div class="cell">- Genesis 2:24 (ESV)</div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-        <!-- start of wpo-contact-section -->
-        <section class="wpo-contact-section section-padding" id="RSVP">
-            <div class="container">
-                <div class="wpo-contact-section-wrapper">
-                    <div class="wpo-contact-form-area">
-                        <div class="wpo-section-title-s2">
-                            <div class="section-title-simg">
-                                <img src="assets/images/section-title2.png" alt="">
-                            </div>
-                            <h2>RSVP <br> <small><?= $guest_name ?></small></h2>
-                            <div class="section-title-img">
-                                <div class="round-ball"></div>
+                                    <div class="item">
+                                        <div class="quote">
+                                            <p>"Therefore what God has joined together, let no one separate."</p>
+                                        </div>
+                                        <div class="bottom">
+
+                                            <div class="label">
+                                                <div class="cell">- Mark 10:9 (NIV)</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
-                        <form method="post" class="contact-validation-active" id="contact-form-main">
-                          
-                            <input type="hidden" name="guestID" value="<?= $gest_username ?>">
-                            <div>
-                                <select name="guest" class="form-control">
-                                    <option disabled="disabled" selected>Number Of Guests</option>
-
-                                    <?php
-                                    $guestMax = $guest['guest_number'];
-                                    ?>
-
-                                    <?php 
-                                    for($x = 1; $x <= $guestMax; $x++)
-                                    {
-
-                                    ?>
-
-                                    <option value="<?= $x ?>"><?= $x ?></option>
-
-                                    <?php
-                                    }
-                                    ?>
-
-                                   
-                                  
-                                </select>
-                            </div>
-                            <div>
-                                <select name="arrival" class="form-control">
-                                    <option disabled="disabled" selected>Confirmation of arrival</option>
-                                    <option value="yes">Yes</option>
-                                    <option value="no">No</option>
-                                
-                                </select>
-                            </div>
-                            <div class="submit-area">
-                                <button type="submit" class="theme-btn-s3">Send RSVP</button>
-                                <div id="c-loader">
-                                    <i class="ti-reload"></i>
-                                </div>
-                            </div>
-                            <div class="clearfix error-handling-messages">
-                                <div id="success">Thank you</div>
-                                <div id="error"> Error occurred while sending email. Please try again later.
-                                </div>
-                            </div>
-                        </form>
-                        <div class="border-style"></div>
                     </div>
-                    <div class="vector-1">
-                        <img src="/assets/images/contact/1.png" alt="">
+                </section>
+
+                <section class="contact-up section-margin section-padding">
+                    <div class="container">
+                        <div class="c-wapp">
+                            <a href="index.html" class="effect-ajax">
+                                <span class="hiring">
+                                    Your presence on our wedding would be incredibly meaningful to us.
+                                </span>
+                                <span class="career">
+                                    Seal Back Invitation
+                                </span>
+                            </a>
+                        </div>
                     </div>
-                    <div class="vector-2">
-                        <img src="/assets/images/contact/2.png" alt="">
-                    </div>
-                </div>
+                </section>
+
             </div>
-        </section>
-        <!-- end of wpo-contact-section -->
 
-
-
-           <!-- start wpo-cta-section -->
-
-           <div class="wpo-cta-section-s3">
-            <div class="conatiner-fluid">
-                <div class="wpo-cta-item">
-                    <h2>Kami Yang Berbahagia </h2>
-                    <p><?= $info['groom_name'] ?> & <?= $info['bride_name'] ?></p>
-                    <a class="theme-btn-s2" href="/gate/close/<?= $gest_username ?>">Tutup Undangan</a>
-
+            <footer class="footer">
+                <div class="container">
+                    <div class="copyright">
+                        <div class="text-center">
+                            <p>© 01.12.2023 Mahendra & Friska</p>
+                            <div class="link-hover"><a class="link-hover"
+                                    data-hover-text="DSN Grid" href="#" target="_blank">Code Dev | Momenbersama + Eirene Solutions</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </footer>
         </div>
+    </main>
 
-        <!-- end wpo-cta-section -->
 
 
-      
 
-      
-<?php endif; ?>
 
 <?php 
 $design->footer($pages , array("")); 
 ?>
 
-<?php if($pagesBody): ?>
 
     <script>
-    var audio = document.getElementById('song'); // Dapatkan elemen audio dengan ID "song"
-    var userInteracted = false; // Variabel untuk menandai apakah pengguna telah berinteraksi
-    var audioLoaded = false; // Variabel untuk menandai apakah file audio telah dimuat
 
-    // Fungsi untuk menampilkan modal
-    function showModal() {
-      document.getElementById('modal-welcome').style.display = 'flex';
-    }
-
-    // Fungsi untuk menutup modal
-    function closeModal() {
-      document.getElementById('modal-welcome').style.display = 'none';
-    }
-
-    // Fungsi untuk memulai pemutaran audio setelah modal ditutup atau tombol "Mulai" diklik
-    function startAudio() {
-      closeModal();
-      userInteracted = true; // Setelah tombol "Mulai" diklik, tandai bahwa pengguna telah berinteraksi
-      lazyLoadAudio();
-    }
-
-    // Fungsi untuk lazy load audio
-    function lazyLoadAudio() {
-      if (!audioLoaded) {
-        var audioSource = 'https://ourwedding.08-09-2023.com/assets/media/<?= $template['music_file'] ?>';
-        audio.src = audioSource; // Setel sumber audio
-        audioLoaded = true; // Tandai bahwa audio telah dimuat
-      }
-      toggleAudio(); // Mulai pemutaran audio setelah file audio dimuat
-    }
-
-    // Fungsi untuk memulai atau menghentikan pemutaran audio
-    function toggleAudio() {
-      if (!userInteracted) {
-        return; // Jika pengguna belum berinteraksi, jangan coba memulai audio
-      }
-
-      if (audio.paused) {
-        audio.play();
-      } else {
-        audio.pause();
-      }
-      updateToggleButton();
-    }
-
-    // Fungsi untuk memperbarui tampilan tombol toggle berdasarkan status pemutaran audio
-    function updateToggleButton() {
-      var toggleButton = document.getElementById('toggle-button');
-      if (audio.paused) {
-        toggleButton.innerHTML = '<i class="fa fa-play"></i>';
-      } else {
-        toggleButton.innerHTML = '<i class="fa fa-stop"></i>';
-      }
-    }
-
-    // Tampilkan modal ketika dokumen selesai dimuat
     document.addEventListener('DOMContentLoaded', function() {
-      showModal();
+        showModal();
     });
-  </script>
 
-    <script>
+    function showModal() {
+        var modal = document.getElementById('myModal');
+        // var closeButton = modal.querySelector('.close');
+        var openinvitation = modal.querySelector('#openinvitation');
+
+        modal.style.display = 'flex';
+
+        openinvitation.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+    }
+
     // var audio = document.getElementById('song'); // Dapatkan elemen audio dengan ID "song"
     // var userInteracted = false; // Variabel untuk menandai apakah pengguna telah berinteraksi
+    // var audioLoaded = false; // Variabel untuk menandai apakah file audio telah dimuat
 
     // // Fungsi untuk menampilkan modal
     // function showModal() {
@@ -588,7 +771,17 @@ $design->footer($pages , array(""));
     // function startAudio() {
     //   closeModal();
     //   userInteracted = true; // Setelah tombol "Mulai" diklik, tandai bahwa pengguna telah berinteraksi
-    //   toggleAudio();
+    //   lazyLoadAudio();
+    // }
+
+    // // Fungsi untuk lazy load audio
+    // function lazyLoadAudio() {
+    //   if (!audioLoaded) {
+    //     var audioSource = '';
+    //     audio.src = audioSource; // Setel sumber audio
+    //     audioLoaded = true; // Tandai bahwa audio telah dimuat
+    //   }
+    //   toggleAudio(); // Mulai pemutaran audio setelah file audio dimuat
     // }
 
     // // Fungsi untuk memulai atau menghentikan pemutaran audio
@@ -616,8 +809,7 @@ $design->footer($pages , array(""));
     // }
 
     // // Tampilkan modal ketika dokumen selesai dimuat
-    // document.addEventListener('DOMContentLoaded', function() {
-    //   showModal();
-    // });
+   
   </script>
-<?php endif; ?>
+
+   

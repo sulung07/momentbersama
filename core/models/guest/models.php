@@ -40,12 +40,14 @@ class Models_guest extends controller {
         
         guestFrom,
         guest_checkin_plan,
-        guest_checkin_plan_number,
         guest_checkin,
         guest_checkin_time,
         guest_checkin_number,
         wa_send
         ";
+
+        //guest_checkin_plan_number,
+
 
         $select_sum   = "SUM(guest_number) as jmldata";
 

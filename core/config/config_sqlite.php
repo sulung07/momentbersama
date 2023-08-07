@@ -216,6 +216,21 @@ class config_sqlite
                     ),
 
 
+                    "event_wish"  => array(
+
+                        "field" => array(
+
+                            "wishID"                  => "INTEGER PRIMARY KEY AUTOINCREMENT",
+                            "guestID"                 => "int",
+                            "wish_date"               => "text",
+                            "wish_time"               => "text",
+                            "wish_desc"               => "text"
+                           
+                        )
+
+                    )
+
+
 
 
                 );

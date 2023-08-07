@@ -1,7 +1,7 @@
 <?php
   class controller{
 
-    public $repository  = "public";
+    public $repository  = "local";
     public $device      = "mac";
 
     function site_setting($task)
@@ -15,18 +15,18 @@
         if($repo == "public")
         {
 
-            $rootDir = "/home/u1735803/public_html/eirenesolutions/wedding/eirenewedding";
+            $rootDir = "/home/u7780352/public_html/momenbersama.com/wedding/momentbersama";
 
         }elseif($repo == "local")
         {
 
             switch ($device) {
                 case 'mac':
-                    $rootDir = "/usr/local/var/www/eirenewedding";
+                    $rootDir = "/usr/local/var/www/momentbersama";
                 break;
 
                 case 'linux':
-                    $rootDir = "/var/www/html/eirenewedding";
+                    $rootDir = "/var/www/html/momentbersama";
                 break;
 
                 case 'windows' :
@@ -52,17 +52,17 @@
 
             case 'media_loc' :
                 if($repo == "public"):
-                $data = "/home/u1735803/public_html/eirenesolutions/wedding/eirenewedding/public/assets";
+                $data = "/home/u7780352/public_html/momenbersama.com/wedding/momentbersama/public/assets";
                 endif;
                 if($repo == "local"):
 
                     switch ($device) {
                         case 'mac':
-                            $data = "/usr/local/var/www/eirenewedding/public/assets";
+                            $data = "/usr/local/var/www/momentbersama/public/assets";
                             break;
 
                         case 'linux':
-                            $data = "/var/www/html/eirenewedding/public/assets";
+                            $data = "/var/www/html/momentbersama/public/assets";
                             break;
                         
                     }
@@ -74,10 +74,10 @@
             case 'pubic-site' :
 
                 if($repo == "public"):
-                    $data = "https:/ourwedding.08-09-2023.com";
+                    $data = "https:/our.momenbersama.com";
                 endif;
                 if($repo == "local"):
-                    $data = "http://dev-eirenewedding.com";
+                    $data = "http://dev-momenbersama.com";
                 endif;
                     
                 break;
@@ -85,10 +85,10 @@
             case 'console-site' :
 
                 if($repo == "public"):
-                $data = "https:/console.eirenesolutions.id";
+                $data = "https:/master.momenbersama.com";
                 endif;
                 if($repo == "local"):
-                $data = "http://consoledev-eirenewedding.com";
+                $data = "http://consoledev-momenbersama.com";
                 endif;
                 break;
 
@@ -97,17 +97,17 @@
 
             case 'rootDirectory' :
                 if($repo == "public"):
-                $data = "/home/u1735803/public_html/eirenesolutions/wedding/eirenewedding";
+                $data = "/home/u7780352/public_html/momenbersama.com/wedding/momentbersama";
                 endif;
                 if($repo == "local"):
 
                     switch ($device) {
                         case 'mac':
-                            $data = "/usr/local/var/www/eirenewedding";
+                            $data = "/usr/local/var/www/momentbersama";
                             break;
 
                         case 'linux':
-                            $data = "/var/www/html/eirenewedding";
+                            $data = "/var/www/html/momentbersama";
                             break;
                         
                     }

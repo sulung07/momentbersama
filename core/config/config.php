@@ -3,20 +3,20 @@ class config
 {
 
      // local or public
-    public $repository  = "public";
+    public $repository  = "local";
     public $device      = "mac";
     private $host       = "localhost";
     public  $conn;
 
    
 //hitamputihberwarna
-    private $db_name_local      = "wedding_eirenesolutions";
+    private $db_name_local      = "mementbersama";
     private $username_local     = "root";
     private $password_local     = "hitamputihberwarna";
 
-    private $db_name_public     = "u1735803_wedding";
-    private $username_public    = "u1735803";
-    private $password_public    = "guritasulung2022";
+    private $db_name_public     = "u7780352_invitation";
+    private $username_public    = "u7780352_momenbersama";
+    private $password_public    = "momenbersama123";
 
   
 

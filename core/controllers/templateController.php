@@ -11,7 +11,7 @@
   {
 
 
-  $eventID    = "720620230726095130";
+  $eventID    = "277720230807155913";
   $guestID    = $req[0];
 
   $template   = $this->getData("template_setting")->get(array("get_single" , array($eventID)));
@@ -38,129 +38,160 @@
 
   endif;
   ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="wpOceans">
-    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
-    <title>J & M Wedding</title>
-    <link href="/assets/css/themify-icons.css" rel="stylesheet">
-    <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/assets/css/flaticon.css" rel="stylesheet">
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/magnific-popup.css" rel="stylesheet">
-    <link href="/assets/css/animate.css" rel="stylesheet">
-    <link href="/assets/css/owl.carousel.css" rel="stylesheet">
-    <link href="/assets/css/owl.theme.css" rel="stylesheet">
-    <link href="/assets/css/slick.css" rel="stylesheet">
-    <link href="/assets/css/slick-theme.css" rel="stylesheet">
-    <link href="/assets/css/swiper.min.css" rel="stylesheet">
-    <link href="/assets/css/nice-select.css" rel="stylesheet">
-    <link href="/assets/css/owl.transitions.css" rel="stylesheet">
-    <link href="/assets/css/jquery.fancybox.css" rel="stylesheet">
-    <link href="/assets/css/odometer-theme-default.css" rel="stylesheet">
-    <link href="/assets/css/style.css" rel="stylesheet">
-    <!-- <script src="/assets/SoundManager2/script/soundmanager2-jsmin.js"></script> -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="discrption" content="Wedding Invitation" />
+    <meta name="keyword"
+        content="Wedding, Wedding Bali, Mahendra Friska, Our Wedding, Wedding Invitation" />
 
-    <meta property="og:title" content="UNDANGAN PERNIKAHAN JOHANNES & KOMANG WARMANI  ">
-    <meta property="og:description" content="Undangan Pernikahan <?= $info['groom_name'] ?> & <?= $info['bride_name'] ?> pada : <?= $formattedDate ?>">
-    <meta property="og:image" content="https://ourwedding.08-09-2023.com/assets/media/<?= $template['background_sec_1'] ?>">
-    <meta property="og:url" content="https://ourwedding.08-09-2023.com/<?= $gest_username ?>">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="<?= $template['header_section_title'] ?> <?= $template['header_section_title_small'] ?>">
-    <meta property="og:locale" content="id_ID">
+    <!--  Title -->
+    <title>Mahendra & Friska</title>
 
+    <!-- Font Google -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+
+    <!-- custom styles (optional) -->
+    <link href="/assets/css/plugins.css" rel="stylesheet" />
+    <link href="/assets/css/style.css" rel="stylesheet" />
+	
+	<script src="https://apis.google.com/js/api.js"></script>
 </head>
+
 <style>
     /* Gaya untuk tombol */
 
-    .modal-container {
-      position: fixed;
-      
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      display: none;
-    }
+    <style>
+        /* Add CSS styles for the modal and overlay */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
 
-    .modal-content {
-      background: url(/assets/images/slider/slide-10.jpg) no-repeat center center;
-      background-size: cover;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-      text-align: center;
-    }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
 
-    .modal-close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      cursor: pointer;
-      font-size: 24px;
-    }
-
-    /* Gaya untuk tombol klik */
-    .modal-button {
-      background-color: #B19A56; /* Warna latar belakang */
-      color: #fff; /* Warna teks */
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-
-    #toggle-button {
-      position: fixed;
-      bottom: 15px;
-      left: 20px;
-      z-index: 999;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 2px solid #ffd700;
-      cursor: pointer;
-      outline: none;
-      background: none;
-    }
-
-    #toggle-button i {
-      font-size: 20px;
-      color: #B19A56;
-    }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
 
 
   </style>
 
-<body class="color12">
 
-<div class="page-wrapper">
-        <!-- start preloader -->
-        <div class="preloader">
-            <div class="vertical-centered-box">
-                <div class="content">
-                    <div class="loader-circle"></div>
-                    <div class="loader-line-mask">
-                        <div class="loader-line"></div>
+<body class="v-light hamburger-menu dsn-effect-scroll dsn-ajax" data-dsn-mousemove="true">
+    <div data-dsn-temp="light"></div>
+
+    <div class="preloader">
+        <div class="preloader-after"></div>
+        <div class="preloader-before"></div>
+        <div class="preloader-block">
+            <div class="title">Mahendra & Friska</div>
+            <div class="percent">0</div>
+            <div class="loading">Inviting You</div>
+        </div>
+        <div class="preloader-bar">
+            <div class="preloader-progress"></div>
+        </div>
+    </div>
+
+
+    <div class="dsn-nav-bar">
+        <div class="site-header">
+            <div class="extend-container">
+                <div class="inner-header">
+                    <div class="main-logo">
+                        <a href="index.html">
+                            <img class="dark-logo" src="assets/img/logo-dark.png" alt="" />
+                            <img class="light-logo" src="assets/img/logo.png" alt="" />
+                        </a>
                     </div>
-                    <img src="assets/images/favicon.png" alt="">
+                </div>
+                <nav class="accent-menu main-navigation">
+                    <ul class="extend-container">
+                        <li class="custom-drop-down">
+                            <a href="#" class="xmenu" onclick="window.open(this.href, '_blank'); return false;">Social Version</a>
+                        </li>
+                        <li class="custom-drop-down">
+                            <a href="#" class="xmenu" onclick="window.open(this.href, '_blank'); return false;" id="addEventLink">Save The Date</a>
+                        </li>
+                        <li class="custom-drop-down">
+                            <a href="https://www.instagram.com/ar/2626676687471099/" class="xmenu" onclick="window.open(this.href, '_blank'); return false;">Instagram Filter</a>
+						</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="header-top header-top-hamburger">
+            <div class="header-container">
+                <div class="logo main-logo">
+                        <img class="dark-logo" src="assets/img/logo-dark.png" alt="Hendra & Friska" />
+                        <img class="light-logo" src="assets/img/logo.png" alt="Hendra & Friska" />
+                </div>
+
+                <div class="menu-icon" data-dsn="parallax" data-dsn-move="5">
+                    <div class="icon-m">
+                        <i class="menu-icon-close fas fa-times"></i>
+                        <span class="menu-icon__line menu-icon__line-left"></span>
+                        <span class="menu-icon__line"></span>
+                        <span class="menu-icon__line menu-icon__line-right"></span>
+                    </div>
+
+                    <div class="text-menu">
+                        <div class="text-button">Menu</div>
+                        <div class="text-open">Open</div>
+                        <div class="text-close">Close</div>
+                    </div>
+                </div>
+
+                <div class="nav">
+                    <div class="inner">
+                        <div class="nav__content">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-content">
+                    <div class="inner-content">
+                    </div>	
                 </div>
             </div>
         </div>
-
+    </div>
+    <!-- End Nav Bar -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+			<h3 style="font-size: 30px;">Hello $Guest_Name</h3>
+            <p style="margin-top: 10px !important;">Thank you for engaging with our invitation.</p>
+            <button class="btn" id="openinvitation" style="margin-top: 20px !important;">Open Invitation</button>
+        </div>
+    </div>
 
 
   <?php
@@ -171,20 +202,38 @@
 
   ?>
 
-   
-</div>
-    <!-- end of page-wrapper -->
+     <!-- Wait Loader -->
+     <div class="wait-loader">
+        <div class="loader-inner">
+            <div class="loader-circle">
+                <div class="loader-layer"></div>
+            </div>
+        </div>
+    </div>
+    <!-- // Wait Loader -->
 
-    <!-- All JavaScript files
-    ================================================== -->
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
-    <!-- Plugins for this template -->
-    <script src="/assets/js/modernizr.custom.js"></script>
-    <script src="/assets/js/jquery.dlmenu.js"></script>
-    <script src="/assets/js/jquery-plugin-collection.js"></script>
-    <!-- Custom script for this template -->
-    <script src="/assets/js/script.js"></script>
+
+    <!-- cursor -->
+    <div class="cursor">
+
+        <div class="cursor-helper cursor-view">
+            <span>VIEW</span>
+        </div>
+
+        <div class="cursor-helper cursor-close">
+            <span>Close</span>
+        </div>
+
+        <div class="cursor-helper cursor-link"></div>
+    </div>
+    <!-- End cursor -->
+
+    <!-- Optional JavaScript -->
+    <script src="/assets/js/jquery-3.1.1.min.js"></script>
+    <script src="/assets/js/plugins.js"></script>
+    <script src="/assets/js/dsn-grid.js"></script>
+    <script src="/assets/js/custom.js"></script>
+	<script src="https://apis.google.com/js/api.js?onload=handleClientLoad"></script>
 </body>
 
 </html>
