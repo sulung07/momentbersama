@@ -15,7 +15,7 @@
         if($repo == "public")
         {
 
-            $rootDir = "/home/u7780352/public_html/momenbersama.com/wedding/momentbersama";
+            $rootDir = "/home/u7780352/public_html/momenbersama.com/wedding/momenbersama";
 
         }elseif($repo == "local")
         {
@@ -52,7 +52,7 @@
 
             case 'media_loc' :
                 if($repo == "public"):
-                $data = "/home/u7780352/public_html/momenbersama.com/wedding/momentbersama/public/assets";
+                $data = "/home/u7780352/public_html/momenbersama.com/wedding/momenbersama/public/assets";
                 endif;
                 if($repo == "local"):
 
@@ -97,7 +97,7 @@
 
             case 'rootDirectory' :
                 if($repo == "public"):
-                $data = "/home/u7780352/public_html/momenbersama.com/wedding/momentbersama";
+                $data = "/home/u7780352/public_html/momenbersama.com/wedding/momenbersama";
                 endif;
                 if($repo == "local"):
 

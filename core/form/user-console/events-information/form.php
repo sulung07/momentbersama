@@ -165,7 +165,7 @@ enableOrientation: true,
     viewport: {
         width: 200,
         height: 200,
-        type: 'circle' //square
+        type: 'square' //square
     },
     boundary: {
         width: '100%',
@@ -184,7 +184,7 @@ enableOrientation: true,
     viewport: {
         width: 200,
         height: 200,
-        type: 'circle' //square
+        type: 'square' //square
     },
     boundary: {
         width: '100%',
