@@ -3,3 +3,86 @@
 [07-Aug-2023 10:08:27 UTC] PHP Notice:  Trying to access array offset on value of type bool in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/home/content.php on line 20
 [07-Aug-2023 10:14:51 UTC] PHP Notice:  Trying to access array offset on value of type bool in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/home/content.php on line 20
 [07-Aug-2023 10:19:26 UTC] PHP Notice:  Trying to access array offset on value of type bool in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/home/content.php on line 20
+[07-Aug-2023 10:24:34 UTC] PHP Notice:  Trying to access array offset on value of type bool in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/home/content.php on line 20
+[07-Aug-2023 10:26:55 UTC] PHP Notice:  Trying to access array offset on value of type bool in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/home/content.php on line 20
+[07-Aug-2023 10:34:52 UTC] PHP Notice:  Trying to access array offset on value of type bool in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/home/content.php on line 20
+[07-Aug-2023 10:35:04 UTC] PHP Notice:  Undefined variable: guest in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 190
+[07-Aug-2023 10:35:04 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 190
+[07-Aug-2023 10:35:04 UTC] PHP Notice:  Undefined variable: guest in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 192
+[07-Aug-2023 10:35:04 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 192
+[07-Aug-2023 10:35:04 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [14] unable to open database file in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/config/config_sqlite.php:680
+Stack trace:
+#0 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/config/config_sqlite.php(680): PDO->__construct('sqlite:/home/u7...')
+#1 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/models/guest/models.php(81): config_sqlite->get_data('/home/u7780352/...', '\n        guestI...', 'guest', Array)
+#2 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/gate/content.php(11): Models_guest->get(Array)
+#3 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/engine/controller.php(1191): require_once('/home/u7780352/...')
+#4 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/pagesController.php(14): controller->view('pages/public/ga...', 'gate', '', 'open', 'joannesmawar-20...')
+#5 /home/u7780352/public_html/momenbers in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/config/config_sqlite.php on line 680
+[07-Aug-2023 10:35:05 UTC] PHP Notice:  Undefined variable: guest in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 190
+[07-Aug-2023 10:35:05 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 190
+[07-Aug-2023 10:35:05 UTC] PHP Notice:  Undefined variable: guest in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 192
+[07-Aug-2023 10:35:05 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 192
+[07-Aug-2023 10:35:05 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [14] unable to open database file in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/config/config_sqlite.php:680
+Stack trace:
+#0 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/config/config_sqlite.php(680): PDO->__construct('sqlite:/home/u7...')
+#1 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/models/guest/models.php(81): config_sqlite->get_data('/home/u7780352/...', '\n        guestI...', 'guest', Array)
+#2 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/gate/content.php(11): Models_guest->get(Array)
+#3 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/engine/controller.php(1191): require_once('/home/u7780352/...')
+#4 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/pagesController.php(14): controller->view('pages/public/ga...', 'gate', '', 'open', 'joannesmawar-20...')
+#5 /home/u7780352/public_html/momenbers in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/config/config_sqlite.php on line 680
+[07-Aug-2023 10:35:09 UTC] PHP Notice:  Trying to access array offset on value of type bool in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/home/content.php on line 20
+[07-Aug-2023 10:35:12 UTC] PHP Notice:  Undefined variable: guest in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 190
+[07-Aug-2023 10:35:12 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 190
+[07-Aug-2023 10:35:12 UTC] PHP Notice:  Undefined variable: guest in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 192
+[07-Aug-2023 10:35:12 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 192
+[07-Aug-2023 10:35:12 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [14] unable to open database file in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/config/config_sqlite.php:680
+Stack trace:
+#0 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/config/config_sqlite.php(680): PDO->__construct('sqlite:/home/u7...')
+#1 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/models/guest/models.php(81): config_sqlite->get_data('/home/u7780352/...', '\n        guestI...', 'guest', Array)
+#2 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/gate/content.php(11): Models_guest->get(Array)
+#3 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/engine/controller.php(1191): require_once('/home/u7780352/...')
+#4 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/pagesController.php(14): controller->view('pages/public/ga...', 'gate', '', 'open', 'joannesmawar-20...')
+#5 /home/u7780352/public_html/momenbers in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/config/config_sqlite.php on line 680
+[07-Aug-2023 10:35:27 UTC] PHP Notice:  Undefined variable: guest in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 190
+[07-Aug-2023 10:35:27 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 190
+[07-Aug-2023 10:35:27 UTC] PHP Notice:  Undefined variable: guest in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 192
+[07-Aug-2023 10:35:27 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 192
+[07-Aug-2023 10:35:27 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [14] unable to open database file in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/config/config_sqlite.php:680
+Stack trace:
+#0 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/config/config_sqlite.php(680): PDO->__construct('sqlite:/home/u7...')
+#1 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/models/guest/models.php(81): config_sqlite->get_data('/home/u7780352/...', '\n        guestI...', 'guest', Array)
+#2 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/gate/content.php(11): Models_guest->get(Array)
+#3 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/engine/controller.php(1191): require_once('/home/u7780352/...')
+#4 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/pagesController.php(14): controller->view('pages/public/ga...', 'gate', '', 'open', 'joannesmawar-20...')
+#5 /home/u7780352/public_html/momenbers in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/config/config_sqlite.php on line 680
+[07-Aug-2023 10:36:07 UTC] PHP Notice:  Trying to access array offset on value of type bool in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/home/content.php on line 20
+[07-Aug-2023 10:36:07 UTC] PHP Notice:  Trying to access array offset on value of type bool in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/home/content.php on line 20
+[07-Aug-2023 10:36:13 UTC] PHP Notice:  Undefined variable: guest in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 190
+[07-Aug-2023 10:36:13 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 190
+[07-Aug-2023 10:36:13 UTC] PHP Notice:  Undefined variable: guest in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 192
+[07-Aug-2023 10:36:13 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 192
+[07-Aug-2023 10:36:13 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [14] unable to open database file in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/config/config_sqlite.php:680
+Stack trace:
+#0 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/config/config_sqlite.php(680): PDO->__construct('sqlite:/home/u7...')
+#1 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/models/guest/models.php(81): config_sqlite->get_data('/home/u7780352/...', '\n        guestI...', 'guest', Array)
+#2 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/gate/content.php(11): Models_guest->get(Array)
+#3 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/engine/controller.php(1191): require_once('/home/u7780352/...')
+#4 /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/pagesController.php(14): controller->view('pages/public/ga...', 'gate', '', 'open', 'joannesmawar-20...')
+#5 /home/u7780352/public_html/momenbers in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/config/config_sqlite.php on line 680
+[07-Aug-2023 10:38:29 UTC] PHP Notice:  Trying to access array offset on value of type bool in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/home/content.php on line 20
+[07-Aug-2023 10:38:30 UTC] PHP Notice:  Trying to access array offset on value of type bool in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/home/content.php on line 20
+[07-Aug-2023 10:39:05 UTC] PHP Notice:  Undefined variable: guest in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 190
+[07-Aug-2023 10:39:05 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 190
+[07-Aug-2023 10:39:05 UTC] PHP Notice:  Undefined variable: guest in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 192
+[07-Aug-2023 10:39:05 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 192
+[07-Aug-2023 10:39:55 UTC] PHP Notice:  Trying to access array offset on value of type bool in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/home/content.php on line 20
+[07-Aug-2023 10:39:55 UTC] PHP Notice:  Trying to access array offset on value of type bool in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/home/content.php on line 20
+[07-Aug-2023 10:39:55 UTC] PHP Notice:  Trying to access array offset on value of type bool in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/home/content.php on line 20
+[07-Aug-2023 10:39:55 UTC] PHP Notice:  Trying to access array offset on value of type bool in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/home/content.php on line 20
+[07-Aug-2023 10:39:55 UTC] PHP Notice:  Trying to access array offset on value of type bool in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/home/content.php on line 20
+[07-Aug-2023 10:39:55 UTC] PHP Notice:  Trying to access array offset on value of type bool in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/home/content.php on line 20
+[07-Aug-2023 10:39:55 UTC] PHP Notice:  Trying to access array offset on value of type bool in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/views/pages/public/home/content.php on line 20
+[07-Aug-2023 10:40:01 UTC] PHP Notice:  Undefined variable: guest in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 190
+[07-Aug-2023 10:40:01 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 190
+[07-Aug-2023 10:40:01 UTC] PHP Notice:  Undefined variable: guest in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 192
+[07-Aug-2023 10:40:01 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/u7780352/public_html/momenbersama.com/wedding/momenbersama/core/controllers/templateController.php on line 192
