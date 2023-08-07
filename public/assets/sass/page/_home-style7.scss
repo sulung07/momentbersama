@@ -1,0 +1,212 @@
+/*======================================
+ 8. Home-style-7
+ =======================================*/
+
+
+/*--------------------------------------------------------------
+8.1 wpo-product-section-s2
+--------------------------------------------------------------*/
+.wpo-product-section-s2{
+   margin: 0 -30px;
+   padding-bottom: 0;
+
+   @media(max-width:991px){
+	margin: 0;
+   }
+
+   .product-active{
+	.owl-controls {
+		width: 100%;
+		margin: 0;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		@include translatingY();
+	}
+
+	.owl-nav [class*=owl-] {
+		padding: 0;
+		margin: 0;
+		color: $theme-primary-color;
+		@include transition-time(0.3s);
+		border: 0;
+		background: none;
+
+		.fi{
+			&::before{
+				font-size: 20px;
+				color: $theme-primary-color-s2;
+			}
+		}
+	}
+
+	.owl-nav .owl-prev,
+	.owl-nav .owl-next {
+		position: absolute;
+		top: 41%;
+		@include translatingY();
+		background: $white;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		opacity: 0;
+		transition: all .3s;
+
+		@media(max-width:575px){
+			display: none;
+		}
+	}
+
+	.owl-nav .owl-prev {
+		left: 35px;
+	}
+
+	.owl-nav .owl-next {
+		right: 35px;
+	}
+
+	.owl-dots {
+		text-align: center;
+		bottom: 25px;
+		position: relative;
+
+		button{
+			width: 10px;
+			height: 12px;
+			border: 0;
+			background: #d4e6f5;
+			margin-right: 10px;
+			border-radius: 50%;
+		}
+		.owl-dot.active{
+		  background-color: $theme-primary-color;
+		}
+	}
+
+	&:hover{
+		.owl-nav .owl-prev,
+		.owl-nav .owl-next {
+			opacity: 1;
+
+		}
+	}
+   }
+}
+
+/*--------------------------------------------------------------
+8.2 wpo-category-section
+--------------------------------------------------------------*/
+
+.wpo-category-section{
+	.wpo-category-wrap{
+		.wpo-category-item{
+			.wpo-category-text{
+				text-align: center;
+
+				a{
+					display: inline-block;
+					padding: 10px 35px;
+					background: $white;
+					border: 1px solid $theme-primary-color;
+					font-size: 22px;
+					color: $dark-gray;
+					font-weight: 600;
+					top: -26px;
+					position: relative;
+
+					&:hover{
+						background: $theme-primary-color-s2;
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}
+/*--------------------------------------------------------------
+8.3 wpo-product-section-s3
+--------------------------------------------------------------*/
+
+.wpo-product-section-s3{
+	padding-top: 70px;
+
+	@media(max-width:767px){
+       padding-top: 30px;
+	}
+}
+
+/*--------------------------------------------------------------
+8.4 wpo-offer-banner-section 
+--------------------------------------------------------------*/
+
+.wpo-offer-banner-section {
+	background: url(../images/offer.jpg) no-repeat center center;
+	height: 500px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	text-align: center;
+
+	@media(max-width:991px){
+		height: 300px;
+	}
+
+
+	.offer-banner-text{
+		h3{
+			font-size: 30px;
+			font-weight: 500;
+			color: #61829e;
+			@media(max-width:767px){
+				font-size: 20px;
+			}
+		}
+
+		h2{
+			font-size: 100px;
+			font-weight: 500;
+			margin-bottom: 0;
+
+			@media(max-width:1200px){
+				font-size: 70px;
+			}
+			@media(max-width:767px){
+				font-size: 40px;
+			}
+
+			span{
+				font-size: 40px;
+				position: relative;
+				top: -50px;
+				color: $text-color;
+				font-weight: 400;
+
+				@media(max-width:1200px){
+					font-size: 20px;
+					top: -30px;
+				}
+
+				@media(max-width:767px){
+					top: -20px;
+				}
+			}
+		}
+	}
+}
+
+
+.pt-160{
+	padding-top: 160px;
+
+	@media(max-width:1200px){
+		padding-top: 120px;
+	}
+
+	@media(max-width:991px){
+		padding-top: 100px;
+	}
+	@media(max-width:767px){
+		padding-top: 80px;
+	}
+}

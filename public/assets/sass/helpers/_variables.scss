@@ -1,0 +1,73 @@
+/*---------------------------
+	Fonts
+----------------------------*/
+@import url("https://fonts.googleapis.com/css?family=Muli:400,400i,600,700,800&display=swap");
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPT-Demi.woff2') format('woff2'),
+      url('../fonts/FuturaPT-Demi.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPT-Heavy.woff2') format('woff2'),
+      url('../fonts/FuturaPT-Heavy.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('../fonts/FuturaPT-Medium.woff2') format('woff2'),
+      url('../fonts/FuturaPT-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+// fonts
+$base-font-size: 15;
+$base-font: 'Muli';
+$heading-font: 'Futura PT';
+
+
+
+// color
+$dark-gray: #002642;
+$body-color: #848892;
+$white: #fff;
+$light: #8188a9;
+$black: #000;
+$small-black: #333;
+$cyan: #848892;
+
+$theme-primary-color: #86a0b6;
+$theme-primary-color-s2: #738ea5;
+$body-bg-color: #fff;
+$section-bg-color: #edf3f8;
+$text-color: #6e6e6e;
+$text-light-color: #7b7b7b;
+$heading-color: $dark-gray;
+$border-color: #ebebeb;
+$border-color-s2: #e4ebf2;
+
+
+// change-color
+
+$theme-color-2:#835845;
+$theme-color-3:#1e8267;
+$theme-color-4:#de5ca2;
+$theme-color-5:#d9ba91;
+$theme-color-6:#99337f;
+$theme-color-7:#18A7B5;
+$theme-color-8:#668c25;
+$theme-color-9:#ff8051;
+$theme-color-10:#dd6673;
+$theme-color-11:#d58675;
+$theme-color-12:#b19a56;

@@ -1,0 +1,58 @@
+/*==========================================
+9. wpo-about-section
+===========================================*/
+
+.wpo-about-section,
+.wpo-about-section-s2{
+    .wpo-about-icon-content{
+        ul{
+            list-style: none;
+
+            li{
+                padding: 6px 0;
+                position: relative;
+                padding-left: 20px;
+
+
+                &:before{
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 10px;
+                    height: 10px;
+                    content: "";
+                    background: $theme-primary-color;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+
+
+.wpo-about-section-s2{
+    .wpo-about-wrap{
+        .wpo-about-item{
+            max-width: 505px;
+    
+            .wpo-about-img{
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .wpo-about-text{
+        padding-left: 0;
+    }
+}
+
+.pb-0{
+    padding-bottom: 0;
+}
+
+
+.pt-70{
+    padding-top: 70px;
+}

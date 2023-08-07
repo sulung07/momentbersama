@@ -1,0 +1,13 @@
+{
+    "name": "vendor/pibk",
+    "description": "deskripsi-proyek-anda",
+    "authors": [
+        {
+            "name": "sulung07",
+            "email": "work.johannesherman@gmail.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.18"
+    }
+}
