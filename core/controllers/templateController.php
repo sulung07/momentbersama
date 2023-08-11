@@ -80,12 +80,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(121, 121, 121, 1.5);
             justify-content: center;
             align-items: center;
         }
 
         .modal-content {
+            width: 100%;
             background-color: white;
             padding: 20px;
             border-radius: 5px;
@@ -187,10 +188,10 @@
     <!-- End Nav Bar -->
     <div id="myModal" class="modal">
         <div class="modal-content">
-			<h3 style="font-size: 30px;">Hello <?= $guest['guest_name'] ?></h3>
-            <p style="margin-top: 10px !important;">Thank you for engaging with our invitation.</p>
+			<h3 style="font-size: 25px; margin-top: 50px;">Hello <?= $guest['guest_name'] ?></h3>
+            <p style="margin-top: 10px !important;">You have a special invitation from us</p>
             <input type="hidden" id="guestusername" value="<?= $guest['guest_username'] ?>" >
-            <button class="btn" id="openinvitation" style="margin-top: 20px !important;">Open Invitation</button>
+            <button class="btn" id="openinvitation" style="margin-top: 20px !important; margin-bottom: 50px;">Open Invitation</button>
         </div>
     </div>
 

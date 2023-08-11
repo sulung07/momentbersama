@@ -68,7 +68,7 @@ $design->head($pages , array("$pages"));
                                             </div>
                                         </div>
 
-                                        <p>WE INVITE YOU <?= $guest['guest_name'] ?> TO OUR WEDDING CELEBRATION.</p>
+                                        <p>WE INVITE YOU <b style="color:#FFCD00 !important;"><?= strtoupper($guest['guest_name']) ?></b> TO OUR WEDDING CELEBRATION.</p>
 
                                     </div>
                                 </div>
@@ -97,7 +97,7 @@ $design->head($pages , array("$pages"));
                                             </div>
                                         </div>
 
-                                        <p>Jl. Puri Mumbul Permai. Jimbaran - Bali.</p>
+                                        <p>Jl. By Pass Ngurah Rai. Jimbaran - Bali.</p>
 
                                     </div>
                                 </div>
@@ -401,7 +401,7 @@ I Gst Ketut Semarajaya & Jero Putu Sri Artini</p>
                             <p><i class="fas fa-church"></i> : Ceremony & Reception</p>
                             <p><i class="fas fa-map-marker-alt"></i> : By Pass Ngurah Rai, Jimbaran, South Kuta, Badung Regency, Bali 80363</p>
                             <p><i class="fas fa-calendar-alt"></i> : Friday, 01 December 2023</p>
-                            <p><i class="fas fa-clock"></i> : 03:00 PM - END</p>
+                            <p><i class="fas fa-clock"></i> : 04:00 PM - END</p>
                             <div class="link-custom">
                                 <a class="image-zoom effect-ajax" href="https://goo.gl/maps/wHrabKHQntjsUkm57" target="_blank" data-dsn="parallax">
                                     <span>See Location Maps</span>
