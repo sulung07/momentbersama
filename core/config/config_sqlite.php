@@ -194,7 +194,8 @@ class config_sqlite
                             "check_in_date"      => "text",
                             "check_in_time"      => "text",
                             "guest_number"       => "int",
-                            "activityID"         => "int"
+                            "activityID"         => "int",
+                            "guest_rom"          => "text"
                           
                       
                         )

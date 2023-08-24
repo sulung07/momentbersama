@@ -21,7 +21,7 @@
 
   $guest         = $this->getData("guest")->get(array("by_username" , array($eventID , $pages)));
   $guest_name    = $guest['guest_name'];
-  $gest_username = $guest['guest_username'];
+  $guest_username = $guest['guest_username'];
   $guestID       = $guest['guestID'];
   $event_list    = $this->getData("guest_activity")->get(array("by_guestID" , array($eventID , $guestID)));
 
@@ -33,7 +33,7 @@
   if($guestID == ""):
 
   $guest_name = "Tamu Undangan";
-  $gest_username = "tamuundangan";
+  $guest_username = "tamuundangan";
   $event_list = array();
 
   endif;
@@ -188,10 +188,10 @@
     <!-- End Nav Bar -->
     <div id="myModal" class="modal">
         <div class="modal-content">
-			<h3 style="font-size: 25px; margin-top: 50px;">Hello <?= $guest['guest_name'] ?></h3>
+			<h3 style="font-size: 25px; margin-top: 50px;">Hello <?= $guest_name ?></h3>
             <p style="margin-top: 10px !important;">You have a special invitation from us</p>
-            <input type="hidden" id="guestusername" value="<?= $guest['guest_username'] ?>" >
-            <button class="btn" id="openinvitation" style="margin-top: 20px !important; margin-bottom: 50px;">Open Invitation</button>
+            <input type="hidden" id="guestusername" value="<?= $guest_username ?>" >
+            <button class="btn" id="openinvitation"  style="margin-top: 20px !important; margin-bottom: 50px;">Open Invitation</button>
         </div>
     </div>
 

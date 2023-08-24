@@ -18,14 +18,14 @@ if(!empty($pages))
     ## get data 
     $guest         = $this->getData("guest")->get(array("by_username" , array($eventID , $pages)));
     $guest_name    = $guest['guest_name'];
-    $gest_username = $guest['guest_username'];
+    $guest_username = $guest['guest_username'];
     $guestID       = $guest['guestID'];
     $event_list    = $this->getData("guest_activity")->get(array("by_guestID" , array($eventID , $guestID)));
 
 }else{
 
     $guest_name    = "TAMU UNDANGAN";
-    $gest_username = "";
+    $guest_username = "";
     $event_list    = array();
 
 }
@@ -68,7 +68,7 @@ $design->head($pages , array("$pages"));
                                             </div>
                                         </div>
 
-                                        <p>WE INVITE YOU <b style="color:#FFCD00 !important;"><?= strtoupper($guest['guest_name']) ?></b> TO OUR WEDDING CELEBRATION.</p>
+                                        <p>WE INVITE YOU <b style="color:#FFCD00 !important;"><?= strtoupper($guest_name) ?></b> TO OUR WEDDING CELEBRATION.</p>
 
                                     </div>
                                 </div>
@@ -508,22 +508,22 @@ I Gst Ketut Semarajaya & Jero Putu Sri Artini</p>
                                         </div>
 
 										<form id="rsvp" class="form" method="post" action="#" data-toggle="validator">
-												<div class="messages"></div>
+                                        <input type="hidden" name="username" value="<?= $guest_username ?>">
 												<div class="input__wrap controls">
 												  <div class="form-group">
 
 													<div class="entry">
 													  <label>Name :</label>
-													  <input id="form_name" type="text" name="name" placeholder="$GUEST_AND_WIFE">
+													  <input id="form_name" type="text" name="name" disabled placeholder="<?= $guest_name ?>">
 													</div>
 												  </div>
 
-												  <div class="form-group">
+												  <!-- <div class="form-group">
 													<div class="entry">
 													  <label>Email :</label>
 													  <input id="form_email" type="email" name="email" placeholder="Your Email">
 													</div>
-												  </div>
+												  </div> -->
 
 															<div class="form-group">
 															  <div class="entry">
@@ -532,7 +532,7 @@ I Gst Ketut Semarajaya & Jero Putu Sri Artini</p>
 															</div>
 															<div class="radio-container">
 															  <div class="radio-circle">
-																<input type="radio" name="status" value="reserved" id="yes-radio">
+																<input type="radio" name="status" value="reserved" checked id="yes-radio">
 																<label for="yes-radio">Yes</label>
 															  </div>
 															  <div class="radio-circle">
@@ -543,10 +543,18 @@ I Gst Ketut Semarajaya & Jero Putu Sri Artini</p>
 													
 													</div>
 
-												  <div class="image-zoom" style="margin: 30px 0px ;">
-													<button>SUBMIT</button>
-												  </div>
+												 
+
 											  </form>
+
+                                              <div class="image-zoom" style="margin: 30px 0px ;">
+													<button onclick="sendrsvp()">SUBMIT</button>
+											  </div>
+
+                                              <div id="messages" class="messages mb-1"></div>
+
+
+                                                 
 
                                     </div>
                                 </div>
@@ -564,23 +572,19 @@ I Gst Ketut Semarajaya & Jero Putu Sri Artini</p>
                                         </div>
 
 										<form id="bless" class="form" method="post" action="#" data-toggle="validator">
+                                        <input type="hidden" name="username" value="<?= $guest_username ?>">
+
 												<div class="messages"></div>
 												<div class="input__wrap controls">
 												  <div class="form-group">
 
 													<div class="entry">
 													  <label>Name :</label>
-													  <input id="form_name" type="text" name="name" placeholder="$GUEST_AND_WIFE">
+													  <input id="form_name" type="text" name="name" disabled placeholder="<?= $guest_name ?>">
 													</div>
 												  </div>
 
-												  <div class="form-group">
-													<div class="entry">
-													  <label>Email :</label>
-													  <input id="form_email" type="email" name="email" placeholder="Your Email">
-													</div>
-												  </div>
-
+												  
 													<div class="form-group">
 													<div class="entry">
 													  <label>Wish :</label>	
@@ -591,10 +595,15 @@ I Gst Ketut Semarajaya & Jero Putu Sri Artini</p>
 												  
 													</div>
 
-												  <div class="image-zoom">
-													<button>BLESSING</button>
-												  </div>
+												 
 											  </form>
+
+                                              <div class="image-zoom">
+													<button onclick="sendwish()">BLESSING</button>
+												</div>
+
+                                                <div id="messages_wish" class="messages mt-2"></div>
+
 
                                     </div>
                                 </div>
@@ -758,8 +767,6 @@ $design->footer($pages , array(""));
                 url  : "/gate/open/"+guestUsername,
                 success:function(response)
                 {
-
-                    
                         modal.style.display = 'none';
 
 
@@ -768,6 +775,51 @@ $design->footer($pages , array(""));
             })
 
         });
+    }
+
+    function sendwish()
+    {
+        var data = $("#bless").serialize();
+
+        $.ajax({
+
+            type : "post",
+            url  : "/gate/sendwish",
+            data : data,
+            success:function(response)
+            {
+
+            
+                    $("#messages_wish").html("<div class='alert alert-secondary' role='alert'>thank you for your blessing for us</div>");
+
+        
+            }
+
+        })
+
+    }
+
+    function sendrsvp()
+    {
+
+        var data = $("#rsvp").serialize();
+
+        $.ajax({
+
+            type : "post",
+            url  : "/gate/sendrsvp",
+            data : data,
+            success:function(response)
+            {
+
+               
+                    $("#messages").html("<div class='alert alert-secondary' role='alert'>thank you for confirming your rsvp</div>");
+
+          
+            }
+
+        })
+
     }
 
     // var audio = document.getElementById('song'); // Dapatkan elemen audio dengan ID "song"
