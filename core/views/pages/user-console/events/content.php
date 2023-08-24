@@ -1176,6 +1176,7 @@ $count_inv_open     = $this->getData("log_invitation")->get(array("count_all" , 
                             $tab_post      = false;
                             $tab_galery    = false;
                             $tab_template  = false;
+                            $tab_wish      = false;
 
                             $subtab_guestlist = false;
                             $subtab_guestcat  = false;
@@ -1194,6 +1195,13 @@ $count_inv_open     = $this->getData("log_invitation")->get(array("count_all" , 
                                         $subtab_generaltemplate = true;
                                         break;
 
+                                    case 'wish':
+                                        $tab_wish = true;
+                                        $subtab_guestlist = true;
+                                        $subtab_generaltemplate = true;
+                                        break;
+    
+                                    
                                     case 'activity' :
                                         $tab_activity = true;
                                         $subtab_guestlist = true;
@@ -1307,6 +1315,12 @@ $count_inv_open     = $this->getData("log_invitation")->get(array("count_all" , 
                                     aria-selected="false">
                                     <i class="mdi mdi-folder-multiple-image d-block font-24"></i>
                                     Event Galery</a>
+
+
+                                    <a class="nav-link <?php if($tab_wish){ echo "active show"; } ?> mt-2 py-2" id="custom-v-pills-wish-tab" data-toggle="pill" href="#custom-v-pills-wish" role="tab" aria-controls="custom-v-pills-wish"
+                                    aria-selected="false">
+                                    <i class="mdi mdi-candle d-block font-24"></i>
+                                    Event Wish</a>
 
                                     <a class="nav-link <?php if($tab_template){ echo "active show"; } ?> mt-2 py-2" id="custom-v-pills-template-tab" data-toggle="pill" href="#custom-v-pills-template" role="tab" aria-controls="custom-v-pills-template"
                                     aria-selected="false">
@@ -2052,6 +2066,9 @@ $count_inv_open     = $this->getData("log_invitation")->get(array("count_all" , 
 
                                             </div>
 
+                                           
+
+
                                             <div class="tab-pane <?php if($subtab_lovestory){echo"show active";} ?> " id="lovestory">
                                             
                                             <?php 
@@ -2203,6 +2220,46 @@ $count_inv_open     = $this->getData("log_invitation")->get(array("count_all" , 
                                         </div>
 
 
+                                    </div>
+
+                                    <div class="tab-pane <?php if($tab_wish){ ?> fade active show <?php } ?> " id="custom-v-pills-wish" role="tabpanel" aria-labelledby="custom-v-pills-wish-tab">
+
+                                    <h4 class="header-title">Event Wish</h4>
+
+                                    <?php 
+                                    
+                                    $wish_list = $this->getData("event_wish")->get(array("get_all" , array($event['event_code'])));
+
+                                    ?>
+
+                                    <div class="row">
+                                        <div class="col-12 mt-2">
+                                            <div class="card-box">
+
+                                                <table id="basic-datatable4" class="table table-striped border-0">
+                                                    <thead class="border-0">
+                                                        <tr>
+                                                            <th class="border-0">Guest</th>
+                                                            <th class="border-0">Wish Date</th>
+                                                            <th class="border-0">Wish</th>
+                                                            
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    <?php if(!empty($wish_list)){ foreach ($wish_list as $key => $list) { ?>
+                                                        <tr>
+                                                            <td class="border-0"><?= $list['guest_name'] ?></td>
+                                                            <td class="border-0"><?= $list['wish_date'] ?> <?= $list['wish_time'] ?></td>
+                                                            <td class="border-0"><?= $list['wish_desc'] ?></td>
+                                                        </tr>
+                                                    <?php } } ?>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                     </div>
                                                
                                 </div>
