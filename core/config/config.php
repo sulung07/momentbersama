@@ -3,7 +3,7 @@ class config
 {
 
      // local or public
-    public $repository  = "local";
+    public $repository  = "public";
     public $device      = "mac";
     private $host       = "localhost";
     public  $conn;

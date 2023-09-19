@@ -1,7 +1,7 @@
 <?php
   class controller{
 
-    public $repository  = "local";
+    public $repository  = "public";
     public $device      = "mac";
 
     function site_setting($task)
