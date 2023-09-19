@@ -259,7 +259,7 @@ $design->head($pages , array("$pages"));
                                         <h3>I Gst Agung Adek Mahendra P</h3>
                                     </div>
                                     <p>The second child of the couple </br>
-I Gst Ketut Semarajaya & Jero Putu Sri Artini</p>
+                                    I Gst Ketut Semarajaya & Jero Putu Sri Artini</p>
                                 </div>
                             </div>
 					
@@ -744,39 +744,65 @@ $design->footer($pages , array(""));
 ?>
 
 
-    <script>
+<script>
+  
+var audio = document.getElementById('song');
+var userInteracted = false;
+var audioLoaded = false;
 
-    document.addEventListener('DOMContentLoaded', function() {
-        showModal();
-    });
+document.addEventListener('DOMContentLoaded', function () {
+    showModal();
+});
 
-    function showModal(username) {
-        var modal = document.getElementById('myModal');
-        // var closeButton = modal.querySelector('.close');
-        var openinvitation = modal.querySelector('#openinvitation');
+function showModal() {
+    var modal = document.getElementById('myModal');
+    var openinvitation = modal.querySelector('#openinvitation');
 
-        modal.style.display = 'flex';
+    modal.style.display = 'flex';
 
-        openinvitation.addEventListener('click', function() {
+    openinvitation.addEventListener('click', function () {
+        var guestUsername = $("#guestusername").val();
 
-            var guestUsername = $("#guestusername").val();
-
-            $.ajax({
-
-                type : "post",
-                url  : "/gate/open/"+guestUsername,
-                success:function(response)
-                {
-                        modal.style.display = 'none';
-
-
-                }
-
-            })
-
+        $.ajax({
+            type: "post",
+            url: "/gate/open/" + guestUsername,
+            success: function (response) {
+                modal.style.display = 'none';
+                userInteracted = true; // Setelah tombol "Open Invitation" diklik, tandai bahwa pengguna telah berinteraksi
+                lazyLoadAudio();
+            }
         });
+    });
+}
+
+function lazyLoadAudio() {
+    if (!audioLoaded) {
+        var audioSource = "<?= $this->site_setting("pubic-site"); ?>/assets/media/Goodness_of_God.mp3";
+        audio.src = audioSource;
+        audioLoaded = true;
+    }
+    toggleAudio(); // Mulai pemutaran audio setelah file audio dimuat
+}
+
+function toggleAudio() {
+    if (!userInteracted) {
+        return;
     }
 
+    if (audio.paused) {
+        audio.play();
+        document.getElementById('toggle-button').style.backgroundImage = 'url("/assets/media/PLAY.png")';
+    } else {
+        audio.pause();
+        document.getElementById('toggle-button').style.backgroundImage = 'url("/assets/media/PAUSE.png")';
+    }
+}
+    </script>
+
+
+    <script>
+
+    
     function sendwish()
     {
         var data = $("#bless").serialize();
@@ -822,63 +848,9 @@ $design->footer($pages , array(""));
 
     }
 
-    // var audio = document.getElementById('song'); // Dapatkan elemen audio dengan ID "song"
-    // var userInteracted = false; // Variabel untuk menandai apakah pengguna telah berinteraksi
-    // var audioLoaded = false; // Variabel untuk menandai apakah file audio telah dimuat
-
-    // // Fungsi untuk menampilkan modal
-    // function showModal() {
-    //   document.getElementById('modal-welcome').style.display = 'flex';
-    // }
-
-    // // Fungsi untuk menutup modal
-    // function closeModal() {
-    //   document.getElementById('modal-welcome').style.display = 'none';
-    // }
-
-    // // Fungsi untuk memulai pemutaran audio setelah modal ditutup atau tombol "Mulai" diklik
-    // function startAudio() {
-    //   closeModal();
-    //   userInteracted = true; // Setelah tombol "Mulai" diklik, tandai bahwa pengguna telah berinteraksi
-    //   lazyLoadAudio();
-    // }
-
-    // // Fungsi untuk lazy load audio
-    // function lazyLoadAudio() {
-    //   if (!audioLoaded) {
-    //     var audioSource = '';
-    //     audio.src = audioSource; // Setel sumber audio
-    //     audioLoaded = true; // Tandai bahwa audio telah dimuat
-    //   }
-    //   toggleAudio(); // Mulai pemutaran audio setelah file audio dimuat
-    // }
-
-    // // Fungsi untuk memulai atau menghentikan pemutaran audio
-    // function toggleAudio() {
-    //   if (!userInteracted) {
-    //     return; // Jika pengguna belum berinteraksi, jangan coba memulai audio
-    //   }
-
-    //   if (audio.paused) {
-    //     audio.play();
-    //   } else {
-    //     audio.pause();
-    //   }
-    //   updateToggleButton();
-    // }
-
-    // // Fungsi untuk memperbarui tampilan tombol toggle berdasarkan status pemutaran audio
-    // function updateToggleButton() {
-    //   var toggleButton = document.getElementById('toggle-button');
-    //   if (audio.paused) {
-    //     toggleButton.innerHTML = '<i class="fa fa-play"></i>';
-    //   } else {
-    //     toggleButton.innerHTML = '<i class="fa fa-stop"></i>';
-    //   }
-    // }
-
-    // // Tampilkan modal ketika dokumen selesai dimuat
    
+
+  
   </script>
 
    

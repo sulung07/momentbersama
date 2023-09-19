@@ -66,6 +66,15 @@
     <link href="/assets/css/style.css" rel="stylesheet" />
 	
 	<script src="https://apis.google.com/js/api.js"></script>
+
+    <meta property="og:title" content="WE INVITE YOU <?= $guest_name ?> TO OUR WEDDING CELEBRATION :">
+    <meta property="og:description" content="YOUR PRESENCE ON OUR WEDDING WOULD BE INCREDIBLY MEANINGFUL TO US 💌">
+    <meta property="og:image" content="https://our.momenbersama.com/assets/img/pic/slider002.jpg">
+    <meta property="og:url" content="https://our.momenbersama.com/<?= $guest_username ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="WEDDING MAHENDRA & FRISKA">
+    <meta property="og:locale" content="id_ID">
+
 </head>
 
 <style>
@@ -100,6 +109,24 @@
             font-size: 20px;
             cursor: pointer;
         }
+
+        #toggle-button {
+        position: fixed;
+        bottom: 15px;
+        left: 20px;
+        z-index: 999;
+        width: 50px;
+        height: 50px;
+        background: url('/assets/media/PLAY.png') no-repeat center; /* Ganti dengan path gambar Anda */
+        background-size: cover;
+        border-radius: 50%;
+        border: 2px solid #ffd700;
+        cursor: pointer;
+        outline: none;
+        }
+
+       
+
     </style>
 
 
@@ -107,6 +134,8 @@
 
 
 <body class="v-light hamburger-menu dsn-effect-scroll dsn-ajax" data-dsn-mousemove="true">
+
+
     <div data-dsn-temp="light"></div>
 
     <div class="preloader">
@@ -186,6 +215,15 @@
         </div>
     </div>
     <!-- End Nav Bar -->
+
+
+    <audio id="song" loop>
+        <source src="<?= $this->site_setting("pubic-site"); ?>/assets/media/Goodness_of_God.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div onclick="toggleAudio()" id="toggle-button"></div>
+
     <div id="myModal" class="modal">
         <div class="modal-content">
 			<h3 style="font-size: 25px; margin-top: 50px;">Hello <?= $guest_name ?></h3>
