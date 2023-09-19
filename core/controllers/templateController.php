@@ -218,7 +218,7 @@
 
 
     <audio id="song" loop>
-        <source src="<?= $this->site_setting("pubic-site"); ?>/assets/media/Goodness_of_God.mp3" type="audio/mpeg">
+        <source src="/assets/media/Goodness_of_God.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 

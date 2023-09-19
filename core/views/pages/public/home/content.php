@@ -777,7 +777,7 @@ function showModal() {
 
 function lazyLoadAudio() {
     if (!audioLoaded) {
-        var audioSource = "<?= $this->site_setting("pubic-site"); ?>/assets/media/Goodness_of_God.mp3";
+        var audioSource = "/assets/media/Goodness_of_God.mp3";
         audio.src = audioSource;
         audioLoaded = true;
     }
