@@ -746,57 +746,64 @@ $design->footer($pages , array(""));
 
 <script>
   
-var audio = document.getElementById('song');
-var userInteracted = false;
-var audioLoaded = false;
+    var audio = document.getElementById('song');
+    var userInteracted = false;
+    var audioLoaded = false;
 
-document.addEventListener('DOMContentLoaded', function () {
-    showModal();
-});
-
-function showModal() {
-    var modal = document.getElementById('myModal');
-    var openinvitation = modal.querySelector('#openinvitation');
-
-    modal.style.display = 'flex';
-
-    openinvitation.addEventListener('click', function () {
-        var guestUsername = $("#guestusername").val();
-
-        $.ajax({
-            type: "post",
-            url: "/gate/open/" + guestUsername,
-            success: function (response) {
-                modal.style.display = 'none';
-                userInteracted = true; // Setelah tombol "Open Invitation" diklik, tandai bahwa pengguna telah berinteraksi
-                lazyLoadAudio();
-            }
-        });
+    document.addEventListener('DOMContentLoaded', function () {
+        showModal();
+        setTimeout(hideToggleButton, 5000);
     });
-}
 
-function lazyLoadAudio() {
-    if (!audioLoaded) {
-        var audioSource = "/assets/media/Goodness_of_God.mp3";
-        audio.src = audioSource;
-        audioLoaded = true;
-    }
-    toggleAudio(); // Mulai pemutaran audio setelah file audio dimuat
-}
+    function showModal() {
+        var modal = document.getElementById('myModal');
+        var openinvitation = modal.querySelector('#openinvitation');
 
-function toggleAudio() {
-    if (!userInteracted) {
-        return;
+        modal.style.display = 'flex';
+
+        openinvitation.addEventListener('click', function () {
+            var guestUsername = $("#guestusername").val();
+
+            $.ajax({
+                type: "post",
+                url: "/gate/open/" + guestUsername,
+                success: function (response) {
+                    modal.style.display = 'none';
+                    userInteracted = true; // Setelah tombol "Open Invitation" diklik, tandai bahwa pengguna telah berinteraksi
+                    lazyLoadAudio();
+                }
+            });
+        });
     }
 
-    if (audio.paused) {
-        audio.play();
-        document.getElementById('toggle-button').style.backgroundImage = 'url("/assets/media/PLAYGIF.gif")';
-    } else {
-        audio.pause();
-        document.getElementById('toggle-button').style.backgroundImage = 'url("/assets/media/PAUSE.png")';
+    function lazyLoadAudio() {
+        if (!audioLoaded) {
+            var audioSource = "/assets/media/Goodness_of_God.mp3";
+            audio.src = audioSource;
+            audioLoaded = true;
+        }
+        toggleAudio(); // Mulai pemutaran audio setelah file audio dimuat
     }
-}
+
+    function toggleAudio() {
+        if (!userInteracted) {
+            return;
+        }
+
+        if (audio.paused) {
+            audio.play();
+            document.getElementById('toggle-button').style.backgroundImage = 'url("/assets/media/PLAYGIF.gif")';
+        } else {
+            audio.pause();
+            document.getElementById('toggle-button').style.backgroundImage = 'url("/assets/media/PAUSE.png")';
+        }
+    }
+
+    function hideToggleButton() {
+        if (!userInteracted) {
+            document.getElementById('toggle-button').style.left = '-25px'; // Kembalikan ke posisi awal setelah 5 detik
+        }
+    }
     </script>
 
 
@@ -814,11 +821,7 @@ function toggleAudio() {
             data : data,
             success:function(response)
             {
-
-            
-                    $("#messages_wish").html("<div class='alert alert-secondary' role='alert'>thank you for your blessing for us</div>");
-
-        
+            $("#messages_wish").html("<div class='alert alert-secondary' role='alert'>thank you for your blessing for us</div>");
             }
 
         })
@@ -837,20 +840,13 @@ function toggleAudio() {
             data : data,
             success:function(response)
             {
-
-               
-                    $("#messages").html("<div class='alert alert-secondary' role='alert'>thank you for confirming your rsvp</div>");
-
-          
+            $("#messages").html("<div class='alert alert-secondary' role='alert'>thank you for confirming your rsvp</div>");
             }
 
         })
 
     }
 
-   
-
-  
   </script>
 
    

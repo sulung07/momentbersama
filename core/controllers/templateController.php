@@ -116,21 +116,21 @@
         }
 
         #toggle-button {
-  position: fixed;
-  bottom: 15px;
-  left: -25px;
-  z-index: 999;
-  width: 50px;
-  height: 50px;
-  background: url('/assets/media/PLAY.png') no-repeat center;
-  background-size: cover;
-  border-radius: 50%;
-  border: 2px solid #ffd700;
-  opacity: 0.5;
-  cursor: pointer;
-  outline: none;
-  transition: left 0.3s; /* Add a transition for the left property */
-}
+        position: fixed;
+        bottom: 15px;
+        left: -25px;
+        z-index: 999;
+        width: 50px;
+        height: 50px;
+        background: url('/assets/media/PLAY.png') no-repeat center;
+        background-size: cover;
+        border-radius: 50%;
+        border: 2px solid #ffd700;
+        opacity: 0.5;
+        cursor: pointer;
+        outline: none;
+        transition: left 0.3s; /* Add a transition for the left property */
+        }
 
 #toggle-button:hover {
   left: 20px; /* Move to left: 20px when hovered */
