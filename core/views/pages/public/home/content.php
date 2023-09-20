@@ -17,7 +17,7 @@ if(!empty($pages))
 
     ## get data 
     $guest         = $this->getData("guest")->get(array("by_username" , array($eventID , $pages)));
-    $guest_name    = $guest['guest_name'];
+    $guest_name     = $guest['guest_name'];
     $guest_username = $guest['guest_username'];
     $guestID       = $guest['guestID'];
     $event_list    = $this->getData("guest_activity")->get(array("by_guestID" , array($eventID , $guestID)));
@@ -38,6 +38,27 @@ if(isset($_SESSION['guestID']))
 
 
 $design->head($pages , array("$pages"));
+
+$galery_list = array(
+    array('pic' => 'Gal001.jpg', 'id' => '1'),
+    array('pic' => 'Gal002.jpg', 'id' => '2'),
+    array('pic' => 'Gal003.jpg', 'id' => '3'),
+    array('pic' => 'Gal004.jpg', 'id' => '4'),
+    array('pic' => 'Gal005.jpg', 'id' => '5'),
+    array('pic' => 'Gal006.jpg', 'id' => '6'),
+    array('pic' => 'Gal007.jpg', 'id' => '7'),
+    array('pic' => 'Gal008.jpg', 'id' => '8'),
+    array('pic' => 'Gal009.jpg', 'id' => '9'),
+    array('pic' => 'Gal010.jpg', 'id' => '10')
+);
+
+
+
+$item_count = 5; // Menampilkan 5 item pertama
+
+$remaining_items = array_slice($galery_list, $item_count); // Item yang tersisa
+?>
+
 
 
 ?>
@@ -350,7 +371,7 @@ $design->head($pages , array("$pages"));
                                 </div>
                                 <div class="item-new slick-slide">
                                     <div class="image" data-overlay="3">
-                                        <img src="assets/img/pic/ch4.jpg" alt="">
+                                        <img src="/assets/img/pic/ch4.jpg" alt="">
                                     </div>
                                     <div class="content">
                                         <div class="background"></div>
@@ -420,69 +441,36 @@ $design->head($pages , array("$pages"));
                             <h2 class="title-main">Hope You Remember Us</h2>
                         </div>
                     </div>
-                    <div class="gallery-portfolio section-margin">
-						
-                        <a class="link-pop" href="assets/img/pic/Gal001.jpg"
-                            data-source="assets/img/pic/Gal001.jpg" >
-                            <img src="assets/img/pic/Gal001.jpg" alt="">
-                        </a>
-						
-						
-                        <a class="link-pop" href="assets/img/pic/Gal002.jpg"
-                            data-source="assets/img/pic/Gal002.jpg" >
-                            <img src="assets/img/pic/Gal002.jpg" alt="">
-                        </a>
-						
-						
-                        <a class="link-pop" href="assets/img/pic/Gal003.jpg"
-                            data-source="assets/img/pic/Gal003.jpg" >
-                            <img src="assets/img/pic/Gal003.jpg" alt="">
-                        </a>
-						
-						
-                        <a class="link-pop" href="assets/img/pic/Gal004.jpg"
-                            data-source="assets/img/pic/Gal004.jpg" >
-                            <img src="assets/img/pic/Gal004.jpg" alt="">
-                        </a>
-						
-						
-                        <a class="link-pop" href="assets/img/pic/Gal005.jpg"
-                            data-source="assets/img/pic/Gal005.jpg" >
-                            <img src="assets/img/pic/Gal005.jpg" alt="">
-                        </a>
-						
-						
-                        <a class="link-pop" href="assets/img/pic/Gal006.jpg"
-                            data-source="assets/img/pic/Gal006.jpg" >
-                            <img src="assets/img/pic/Gal006.jpg" alt="">
-                        </a>
-						
-						
-                        <a class="link-pop" href="assets/img/pic/Gal007.jpg"
-                            data-source="assets/img/pic/Gal007.jpg" >
-                            <img src="assets/img/pic/Gal007.jpg" alt="">
-                        </a>
-						
-						
-                        <a class="link-pop" href="assets/img/pic/Gal008.jpg"
-                            data-source="assets/img/pic/Gal008.jpg" >
-                            <img src="assets/img/pic/Gal008.jpg" alt="">
-                        </a>
-						
-						
-                        <a class="link-pop" href="assets/img/pic/Gal009.jpg"
-                            data-source="assets/img/pic/Gal009.jpg" >
-                            <img src="assets/img/pic/Gal009.jpg" alt="">
-                        </a>
-						
-						
-                        <a class="link-pop" href="assets/img/pic/Gal010.jpg"
-                            data-source="assets/img/pic/Gal010.jpg" >
-                            <img src="assets/img/pic/Gal010.jpg" alt="">
-                        </a>
-                        
+                    
+                    <div class="gallery-portfolio section-margin" id="galery-data" >
+
+        
+                    <?php 
+                    if(!empty($galery_list)){ 
+                        foreach ($galery_list as $key => $list) {
+                            if ($key < $item_count) {
+                                ?>
+                                <a class="link-pop" href="/assets/img/pic/<?= $list['pic'] ?>"
+                                    data-source="/assets/img/pic/<?= $list['pic'] ?>" >
+                                    <img src="/assets/img/pic/<?= $list['pic'] ?>" alt="">
+                                </a>
+                                <?php
+                            } else {
+                                break;
+                            }
+                        }
+                    }
+                    ?>
+                
                     </div>
-                    <!--<center><button id="load-more-button" >Load More</button></center>-->
+
+                    <?php if (!empty($remaining_items)) { ?>
+                        <div class="col-12 text-center mt-4">
+                            <button class="btn btn-light" id="load-more-btn">Load More</button>
+                        </div>
+                    <?php } ?>
+
+                    
                 </section>
                 
                 <section class="our-news section-margin">
@@ -743,67 +731,164 @@ $design->head($pages , array("$pages"));
 $design->footer($pages , array("")); 
 ?>
 
+<script>
+
+function gallery() {
+        var galleryPortfolio = $( ".gallery-portfolio" );
+
+        if ( galleryPortfolio.length < 1 )
+            return;
+
+        galleryPortfolio.justifiedGallery( {
+            rowHeight : 300,
+            margins : 15,
+        } );
+
+        galleryPortfolio.magnificPopup( {
+            delegate : "a",
+            type : "image",
+            closeOnContentClick : false,
+            closeBtnInside : false,
+            mainClass : "mfp-with-zoom", // this class is for CSS animation below
+            gallery : {
+                enabled : true,
+            },
+            zoom : {
+                enabled : true,
+                duration : 300, // don't foget to change the duration also in CSS
+                easing : "ease-in-out", // CSS transition easing function
+                opener : function ( element ) {
+                    return element.find( "img" );
+                },
+
+            },
+            callbacks : {
+                open : function () {
+                    // Will fire when this exact popup is opened
+                    // this - is Magnific Popup object
+                    $( "html" ).css( { margin : 0 } );
+                },
+                close : function () {
+                    // Will fire when popup is closed
+                },
+                // e.t.c.
+            },
+
+        } );
+    }
+
+  $(document).ready(function () {
+    var itemCount = <?php echo $item_count; ?>;
+    var remainingItems = <?php echo json_encode($remaining_items); ?>;
+    var loadCount = 5;
+    var galleryLoaded = false; // Tambahkan variabel ini untuk mengontrol apakah galeri sudah dimuat
+
+    $('#load-more-btn').click(function () {
+    for (var i = 0; i <= loadCount; i++) {
+        if (remainingItems.length > 0) {
+            var item = remainingItems.shift();
+            var itemHtml =
+                '<a class="link-pop" href="assets/img/pic/' + item['pic'] + '"' +
+                'data-source="assets/img/pic/' + item['pic'] + '" >' +
+                '<img src="assets/img/pic/' + item['pic'] + '" alt="">' +
+                '</a>';
+
+            $('#galery-data').append(itemHtml);
+            itemCount++;
+        } else {
+            $('#load-more-btn').hide(); // Sembunyikan tombol "Load More" jika semua item sudah ditampilkan
+            break;
+        }
+    }
+    gallery();
+});
+});
+
+</script>
+
 
 <script>
-  
-    var audio = document.getElementById('song');
-    var userInteracted = false;
-    var audioLoaded = false;
+var audio = document.getElementById('song');
+var userInteracted = false;
+var audioLoaded = false;
+var isPlaying = false;
+var hideTimeout;
 
-    document.addEventListener('DOMContentLoaded', function () {
-        showModal();
-        setTimeout(hideToggleButton, 5000);
+document.addEventListener('DOMContentLoaded', function () {
+    showModal();
+});
+
+function showModal() {
+    var modal = document.getElementById('myModal');
+    var openinvitation = modal.querySelector('#openinvitation');
+    var toggleButton = document.getElementById('toggle-button');
+
+    modal.style.display = 'flex';
+
+    openinvitation.addEventListener('click', function () {
+        var guestUsername = $("#guestusername").val();
+
+        $.ajax({
+            type: "post",
+            url: "/gate/open/" + guestUsername,
+            success: function (response) {
+                modal.style.display = 'none';
+                userInteracted = true;
+                isPlaying = true;
+                // Mulai menghitung waktu untuk menyembunyikan tombol setelah 3 detik
+                hideTimeout = setTimeout(function () {
+                    toggleButton.style.left = '-25px';
+                }, 3000);
+
+               
+                lazyLoadAudio();
+                
+
+            }
+        });
     });
 
-    function showModal() {
-        var modal = document.getElementById('myModal');
-        var openinvitation = modal.querySelector('#openinvitation');
-
-        modal.style.display = 'flex';
-
-        openinvitation.addEventListener('click', function () {
-            var guestUsername = $("#guestusername").val();
-
-            $.ajax({
-                type: "post",
-                url: "/gate/open/" + guestUsername,
-                success: function (response) {
-                    modal.style.display = 'none';
-                    userInteracted = true; // Setelah tombol "Open Invitation" diklik, tandai bahwa pengguna telah berinteraksi
-                    lazyLoadAudio();
-                }
-            });
-        });
-    }
-
-    function lazyLoadAudio() {
-        if (!audioLoaded) {
-            var audioSource = "/assets/media/Goodness_of_God.mp3";
-            audio.src = audioSource;
-            audioLoaded = true;
-        }
-        toggleAudio(); // Mulai pemutaran audio setelah file audio dimuat
-    }
-
-    function toggleAudio() {
+    toggleButton.addEventListener('click', function () {
         if (!userInteracted) {
             return;
         }
 
-        if (audio.paused) {
-            audio.play();
-            document.getElementById('toggle-button').style.backgroundImage = 'url("/assets/media/PLAYGIF.gif")';
+        if (isPlaying) {
+            toggleButton.style.left = '20px'; // Tampilkan tombol saat tombol "pause" ditekan
         } else {
-            audio.pause();
-            document.getElementById('toggle-button').style.backgroundImage = 'url("/assets/media/PAUSE.png")';
+            toggleButton.style.left = '-25px'; // Sembunyikan tombol saat tombol "play" ditekan
         }
+
+        isPlaying = !isPlaying; // Toggle status "isPlaying" saat tombol diklik
+        toggleAudio();
+    });
+}
+
+function lazyLoadAudio() {
+    if (!audioLoaded) {
+        var audioSource = "/assets/media/Goodness_of_God.mp3";
+        audio.src = audioSource;
+        audioLoaded = true;
+        audio.load(); // Memuat audio
+      }
+
+      toggleAudio();
+}
+
+function toggleAudio() {
+    if (!userInteracted) {
+        return;
     }
 
-    function hideToggleButton() {
-        if (!userInteracted) {
-            document.getElementById('toggle-button').style.left = '-25px'; // Kembalikan ke posisi awal setelah 5 detik
-        }
+    if (isPlaying) {
+        audio.play();
+        document.getElementById('toggle-button').style.backgroundImage = 'url("/assets/media/PLAYGIF.gif")';
+    } else {
+        audio.pause();
+        document.getElementById('toggle-button').style.backgroundImage = 'url("/assets/media/PAUSE.png")';
     }
+}
+
     </script>
 
 
@@ -847,6 +932,9 @@ $design->footer($pages , array(""));
 
     }
 
-  </script>
+
+</script>
+
+
 
    

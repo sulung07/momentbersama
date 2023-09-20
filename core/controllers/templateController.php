@@ -118,7 +118,6 @@
         #toggle-button {
         position: fixed;
         bottom: 15px;
-        left: -25px;
         z-index: 999;
         width: 50px;
         height: 50px;
@@ -132,10 +131,10 @@
         transition: left 0.3s; /* Add a transition for the left property */
         }
 
-#toggle-button:hover {
-  left: 20px; /* Move to left: 20px when hovered */
+/* #toggle-button:hover {
+  left: 20px; 
   opacity: 1;
-}
+} */
 
 
 </style>
@@ -298,7 +297,10 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- End cursor -->
 
     <!-- Optional JavaScript -->
-    <script src="/assets/js/jquery-3.1.1.min.js"></script>
+    <!-- <script src="/assets/js/jquery-3.1.1.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="path-to-magnific-popup/jquery.magnific-popup.min.js"></script>
+
     <script src="/assets/js/plugins.js"></script>
     <script src="/assets/js/dsn-grid.js"></script>
     <script src="/assets/js/custom.js"></script>
