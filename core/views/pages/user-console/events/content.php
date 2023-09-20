@@ -1622,40 +1622,9 @@ $count_inv_open     = $this->getData("log_invitation")->get(array("count_all" , 
 
                                                     $guest_act = $this->getData("guest_activity")->get(array("by_guestID" , array($event['event_code'] , $list['guestID'])));
 
-
-
-
-                                                    $message = "Salam Sejahtera Bagi Kita Semua, 🙏\n\n";
-                                                    $message .= "Dengan rahmat dan berkat Tuhan Yang Maha Esa, kami bermaksud mengundang Yang Terhormat: \n\n"; 
-                                                    $message .= "*$list[guest_name]*\n\n";
-                                                    $message .= "Untuk hadir dalam moment pernikahan kami pada :\n\n";
-
-                                                    if(!empty($guest_act)){ foreach ($guest_act as $key_act => $list_act) { 
-
-                                                    $formattedDate = $this->dateIndoHari($list_act['activity_date']);
-
-                                                    $message .= "*$list_act[activity_name]*\n";
-
-                                                    $message .= "Hari/Tanggal:\n$formattedDate\n";
-                                                    $message .= "Waktu:\n$list_act[activity_time] - $list_act[activity_time_end] WITA \n";
-                                                    $message .= "Lokasi:\n$list_act[activity_loc_title]\n\n";
-
-                                                    }}
-
-                                                    $message .= "Merupakan Suatu Kehormatan dan kebahagiaan\nBagi kami Apabila Bapak / ibu / Saudara/i Berkenan Hadir Memberikan Doa restu.\n\n";
-                                                    $message .= "*LINK UNDANGAN:*\nhttps://ourwedding.08-09-2023.com/$list[guest_username]\n\n";
-
-                                                    $message .= "Atas kehadiran dan doa restunya, kami mengucapkan terima kasih\n\n";
-                                                    $message .= "Dengan Penuh Syukur🙏\n\n";
-                                                    $message .= "Kami yg Berbahagia\n*Johannes I Gede Herman Adi Cahya & Komang Warmani*\nBeserta Keluarga\n\n";
-                                                    $message .= "*Note : Tanpa Mengurangi Rasa Hormat, Dikarenakan Keterbatasan Waktu & Tempat, Undangan ini berlaku untuk $list[guest_number] Orang, Dan Mohon Undangan Harap Dibawa*\n\n";
-
-                                                    $message .= "Filter Instagram:\nhttps://www.instagram.com/ar/1005660167449853/\n\n";
-
-
+                                                    $message = "https://our.momenbersama.com/$list[guest_username]\n\n";
+                                                    $message .= "YOUR PRESENCE ON OUR WEDDING WOULD BE INCREDIBLY MEANINGFUL TO US 💌 \n\n"; 
                                                     
-
-
                                                     $url_wa = 'https://api.whatsapp.com/send?phone=' . urlencode($list['guest_phone']) . '&text=' . urlencode($message);
     
 
