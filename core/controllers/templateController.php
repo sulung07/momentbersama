@@ -67,20 +67,25 @@
 	
 	<script src="https://apis.google.com/js/api.js"></script>
 
-    <meta property="og:title" content="WE INVITE YOU <?= $guest_name ?> TO OUR WEDDING CELEBRATION :">
-    <meta property="og:description" content="YOUR PRESENCE ON OUR WEDDING WOULD BE INCREDIBLY MEANINGFUL TO US 💌">
-    <meta property="og:image" content="https://our.momenbersama.com/assets/img/pic/slider002.jpg">
+    <meta property="og:title" content="Mahendra & Friska">
+    <meta property="og:description" content="We Invite You <?= $guest_name ?>">
+    <meta property="og:image" content="https://our.momenbersama.com/assets/img/pic/Logo_invitation.jpg">
     <meta property="og:url" content="https://our.momenbersama.com/<?= $guest_username ?>">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="WEDDING MAHENDRA & FRISKA">
+    <meta property="og:site_name" content="Mahendra & Friska">
     <meta property="og:locale" content="id_ID">
 
 </head>
 
 <style>
+/* Gaya untuk tombol Load More
+.gallery-portfolio a.link-pop:nth-child(n+6) {
+    display: none;
+}
+*/
+
     /* Gaya untuk tombol */
 
-    <style>
         /* Add CSS styles for the modal and overlay */
         .modal {
             display: none;
@@ -111,28 +116,54 @@
         }
 
         #toggle-button {
-        position: fixed;
-        bottom: 15px;
-        left: 20px;
-        z-index: 999;
-        width: 50px;
-        height: 50px;
-        background: url('/assets/media/PLAY.png') no-repeat center; /* Ganti dengan path gambar Anda */
-        background-size: cover;
-        border-radius: 50%;
-        border: 2px solid #ffd700;
-        cursor: pointer;
-        outline: none;
+  position: fixed;
+  bottom: 15px;
+  left: -25px;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  background: url('/assets/media/PLAY.png') no-repeat center;
+  background-size: cover;
+  border-radius: 50%;
+  border: 2px solid #ffd700;
+  opacity: 0.5;
+  cursor: pointer;
+  outline: none;
+  transition: left 0.3s; /* Add a transition for the left property */
+}
+
+#toggle-button:hover {
+  left: 20px; /* Move to left: 20px when hovered */
+  opacity: 1;
+}
+
+
+</style>
+<!--
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const loadMoreButton = document.getElementById("load-more-button");
+    const hiddenImages = document.querySelectorAll(".gallery-portfolio a.link-pop:nth-child(n+6)");
+    let showingMore = false;
+
+    loadMoreButton.addEventListener("click", function () {
+        if (!showingMore) {
+            hiddenImages.forEach(function (image) {
+                image.style.display = "inline-block";
+            });
+            loadMoreButton.textContent = "Show Less";
+            showingMore = true;
+        } else {
+            hiddenImages.forEach(function (image) {
+                image.style.display = "none";
+            });
+            loadMoreButton.textContent = "Load More";
+            showingMore = false;
         }
-
-       
-
-    </style>
-
-
-  </style>
-
-
+    });
+});
+</script>
+-->
 <body class="v-light hamburger-menu dsn-effect-scroll dsn-ajax" data-dsn-mousemove="true">
 
 
@@ -166,15 +197,12 @@
                 <nav class="accent-menu main-navigation">
                     <ul class="extend-container">
                         <li class="custom-drop-down">
-                            <a href="#" class="xmenu" onclick="window.open(this.href, '_blank'); return false;">Social Version</a>
-                        </li>
-                        <li class="custom-drop-down">
-                            <a href="#" class="xmenu" onclick="window.open(this.href, '_blank'); return false;" id="addEventLink">Save The Date</a>
+                            <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Mahendra+%26+Friska+Wedding&dates=20231201T153000/20231201T220000&location=Alindra+Jimbaran+-+Bali&details=We+Invite+You+To+Join+In+Our+Wedding+Celebration+-+Mahendra+%26+Friska%2C+Your+Presence+On+Our+Wedding+Would+Be+Incredibly+Meaningful+To+Us." class="xmenu" onclick="window.open(this.href, '_blank'); return false;" id="addEventLink">Save The Date</a>
                         </li>
                         <li class="custom-drop-down">
                             <a href="https://www.instagram.com/ar/2626676687471099/" class="xmenu" onclick="window.open(this.href, '_blank'); return false;">Instagram Filter</a>
 						</li>
-                    </ul>
+                        </ul>
                 </nav>
             </div>
         </div>
@@ -226,7 +254,8 @@
 
     <div id="myModal" class="modal">
         <div class="modal-content">
-			<h3 style="font-size: 25px; margin-top: 50px;">Hello <?= $guest_name ?></h3>
+            <img src="assets/img/Logo-Large.png" width="100px" alt="" style="margin:10px 0px -50px 0px; max-width: 30%;height: auto;">
+			<h3 style="font-size: 25px; margin-top: 50px;"><?= $guest_name ?></h3>
             <p style="margin-top: 10px !important;">You have a special invitation from us</p>
             <input type="hidden" id="guestusername" value="<?= $guest_username ?>" >
             <button class="btn" id="openinvitation"  style="margin-top: 20px !important; margin-bottom: 50px;">Open Invitation</button>

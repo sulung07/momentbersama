@@ -480,10 +480,11 @@ $design->head($pages , array("$pages"));
                             data-source="assets/img/pic/Gal010.jpg" >
                             <img src="assets/img/pic/Gal010.jpg" alt="">
                         </a>
-						
+                        
                     </div>
+                    <!--<center><button id="load-more-button" >Load More</button></center>-->
                 </section>
-
+                
                 <section class="our-news section-margin">
                     <div class="container">
                         <div class="one-title" data-dsn-animate="up">
@@ -706,7 +707,7 @@ $design->head($pages , array("$pages"));
                 <section class="contact-up section-margin section-padding">
                     <div class="container">
                         <div class="c-wapp">
-                            <a href="index.html" class="effect-ajax">
+                            <a href="javascript:window.location.reload();" class="effect-ajax">
                                 <span class="hiring">
                                     Your presence on our wedding would be incredibly meaningful to us.
                                 </span>
@@ -725,8 +726,7 @@ $design->head($pages , array("$pages"));
                     <div class="copyright">
                         <div class="text-center">
                             <p>© 01.12.2023 Mahendra & Friska</p>
-                            <div class="link-hover"><a class="link-hover"
-                                    data-hover-text="DSN Grid" href="#" target="_blank">Code Dev | Momenbersama + Eirene Solutions</a>
+                            <div class="link-hover"><a class="link-hover" data-hover-text="DSN Grid" >Code Dev | Momenbersama + Eirene Solutions</div>
                             </div>
                         </div>
                     </div>
@@ -791,7 +791,7 @@ function toggleAudio() {
 
     if (audio.paused) {
         audio.play();
-        document.getElementById('toggle-button').style.backgroundImage = 'url("/assets/media/PLAY.png")';
+        document.getElementById('toggle-button').style.backgroundImage = 'url("/assets/media/PLAYGIF.gif")';
     } else {
         audio.pause();
         document.getElementById('toggle-button').style.backgroundImage = 'url("/assets/media/PAUSE.png")';
